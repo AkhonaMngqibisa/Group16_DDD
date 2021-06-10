@@ -1,4 +1,9 @@
+<<<<<<< HEAD:src/main/java/za/ac/cput/Entity/WorkOut.java
 package za.ac.cput.Entity;/* Hlumelo Mpotulo
+=======
+package za.ac.cput.Entity;
+/* Hlumelo Mpotulo
+>>>>>>> 92e98cde8e45578292d2855f9b9f59352e5f7d56:src/main/java/WorkOut.java
    215226348
 
  */
