@@ -1,9 +1,8 @@
-
+package za.ac.cput.Entity;
 /* Hlumelo Mpotulo
    215226348
 
  */
-import java.util.Date;
 
 public class WorkOutSchedule {
 
