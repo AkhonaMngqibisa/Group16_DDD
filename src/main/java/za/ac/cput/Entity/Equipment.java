@@ -1,5 +1,11 @@
 package za.ac.cput.Entity;
 
+/* Equipment.java
+Entity for the Equipment
+Author: Lilitha Moni (219068429)
+Date: 10 June 2021
+*/
+
 public class Equipment {
     private int eqId;
     private String eqName, eqModel, eqInfo;

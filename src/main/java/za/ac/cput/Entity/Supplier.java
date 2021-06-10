@@ -1,5 +1,11 @@
 package za.ac.cput.Entity;
 
+/* Supplier.java
+Entity for the Supplier
+Author: Lilitha Moni (219068429)
+Date: 10 June 2021
+*/
+
 public class Supplier {
     private int supId, eqId;
     private String supName;
