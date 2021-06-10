@@ -45,18 +45,18 @@ public class Package {
         return packageName;
     }
 
-    public void CanDoCheckUp(boolean checkUp) {
+    public void CanDoCheckUp(boolean checkUpCode) {
         /*
-         * if packageType allows
+         * if checkUpCode allows
          * member to do checkup
          * then (true) member can do checkup
          * if not then (false)
          */
     }
 
-    public void CanDoFitness(boolean fitness) {
+    public void CanDoFitness(boolean fitnessCode) {
         /*
-         * if packageType allows
+         * if fitnessCode allows
          * for fitness program then
          * can do (true) fitness if
          *  not then (false)
