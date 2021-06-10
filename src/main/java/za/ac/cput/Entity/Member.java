@@ -30,6 +30,42 @@ public class Member
         this.password = builder.password;
     }
 
+    public int getMemberID() {
+        return memberID;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
     @Override
     public String toString() {
         return "Member{" +
@@ -166,6 +202,7 @@ public class Member
 
             return this;
         }
+
 
     }
 
