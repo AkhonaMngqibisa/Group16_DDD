@@ -1,5 +1,5 @@
-<<<<<<< HEAD:src/main/java/za/ac/cput/Entity/WorkOut.java
-package za.ac.cput.Entity;/* Hlumelo Mpotulo
+package za.ac.cput.Entity;
+/* Hlumelo Mpotulo
 =======
 package za.ac.cput.Entity;
 /* Hlumelo Mpotulo
