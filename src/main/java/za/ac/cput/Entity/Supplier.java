@@ -6,9 +6,13 @@ Author: Lilitha Moni (219068429)
 Date: 10 June 2021
 */
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Supplier {
     private int supId, eqId;
     private String supName;
+    List<Supplier> supplierList = new ArrayList<>();
 
     private Supplier(Builder builder) {
         this.supId = builder.supId;
@@ -18,14 +22,48 @@ public class Supplier {
 
     }
 
+    public int getSupId() {
+        return supId;
+    }
+
+    public String getSupName() {
+        return supName;
+    }
+
+    public int getEqId() {
+        return eqId;
+    }
+
     @Override
     public String toString() {
         return "Supplier{" +
                 "Supplier Id ='" + supId + '\'' +
                 ", Name ='" + supName + '\'' +
                 ", Equipment Id ='" + eqId + '\'' +
+                ", Supplier List=" + supplierList +
                 '}';
     }
+    public List<Supplier> AddSupplier()
+    {
+
+        Supplier supplier = new Supplier(new Supplier.Builder());
+        supplierList.add(supplier);
+
+
+        return supplierList;
+    }
+
+    public List<Supplier> EditSupplier()
+    {
+        AddSupplier();
+        for(int k = 0; k < 10; k++)
+        {
+            Supplier supplier = new Supplier(new Supplier.Builder());
+            supplierList.contains(supplier);
+        }
+        return supplierList;
+    }
+
 
     public static class Builder {
         private int supId,eqId;
