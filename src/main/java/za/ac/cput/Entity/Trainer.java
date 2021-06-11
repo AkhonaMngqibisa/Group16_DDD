@@ -33,25 +33,21 @@ public class Trainer {
                 '}';
     }
 
-    public void Login() {
-        System.out.println("Successfully login");
-    }
-
     public static class Builder {
         private String firstName, lastName, address, phoneNo, emailAddress,password;
-        private int trainerID, age;
+        private int trainerID;
 
         //Set Trainer ID
         public Builder setTrainerID(int trainerID) {
             this.trainerID=trainerID;
             return this;
         }
-        //Set Firstname
+        //Set First name
         public Builder setFirstName(String firstName) {
             this.firstName= firstName;
             return this;
         }
-        //Set Lastname
+        //Set Last name
         public Builder setLastName(String lastName) {
             this.lastName= lastName;
             return this;
@@ -62,13 +58,13 @@ public class Trainer {
             return this;
         }
 
-        //Set PhoneNumber
+        //Set Phone Number
         public Builder setPhoneNo(String phoneNo) {
             this.phoneNo= phoneNo;
             return this;
         }
 
-        //Set EmailAddress
+        //Set Email Address
         public Trainer.Builder setEmailAddress(String emailAddress) {
             this.emailAddress= emailAddress;
             return this;
