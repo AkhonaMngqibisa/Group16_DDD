@@ -1,7 +1,7 @@
 package za.ac.cput.Factory;
 /* Payroll.java
 Factory for the Payroll.
-Author: Bokang Molaoa (218131097)
+Author: Bokang Molaoa (218131097).
 Date: 09 June 2021
 */
 import za.ac.cput.Entity.PayRoll;

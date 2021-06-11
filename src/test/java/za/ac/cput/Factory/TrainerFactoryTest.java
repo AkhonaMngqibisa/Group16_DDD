@@ -1,7 +1,7 @@
 package za.ac.cput.Factory;
 /* TrainerFactoryTest.java
 Test TrainerFactory.
-Author: Bokang Molaoa (218131097)
+Author: Bokang Molaoa (218131097).
 Date: 09 June 2021
 
 */
