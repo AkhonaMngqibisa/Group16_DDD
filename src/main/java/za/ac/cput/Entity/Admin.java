@@ -42,7 +42,7 @@ private String emailAddress;
     @Override
     public String toString() {
         return "Admin{" +
-                "fisrtName='" + fisrtName + '\'' +
+                "firstName='" + fisrtName + '\'' +
                 ", LastName='" + lastName + '\'' +
                 ", phoneNo='" + phoneNo + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +

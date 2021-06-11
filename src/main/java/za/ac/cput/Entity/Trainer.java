@@ -1,7 +1,7 @@
 package za.ac.cput.Entity;
 /* Trainer.java
 Entity for the Trainer.
-Author: Bokang Molaoa (218131097)
+Author: Bokang Molaoa (218131097) ADP3 Assignment 3.
 Date: 09 June 2021
 */
 
@@ -33,25 +33,21 @@ public class Trainer {
                 '}';
     }
 
-    public void Login() {
-        System.out.println("Successfully login");
-    }
-
     public static class Builder {
-        private String firstName, lastName, address, phoneNo, status, emailAddress,password;
-        private int trainerID, age;
+        private String firstName, lastName, address, phoneNo, emailAddress,password;
+        private int trainerID;
 
-        //Set Member ID
-        public Builder setMemberID(int memberID) {
-            this.trainerID=memberID;
+        //Set Trainer ID
+        public Builder setTrainerID(int trainerID) {
+            this.trainerID=trainerID;
             return this;
         }
-        //Set Firstname
+        //Set First name
         public Builder setFirstName(String firstName) {
             this.firstName= firstName;
             return this;
         }
-        //Set Lastname
+        //Set Last name
         public Builder setLastName(String lastName) {
             this.lastName= lastName;
             return this;
@@ -62,19 +58,13 @@ public class Trainer {
             return this;
         }
 
-        //Set PhoneNumber
+        //Set Phone Number
         public Builder setPhoneNo(String phoneNo) {
             this.phoneNo= phoneNo;
             return this;
         }
 
-        //Set status
-        public Trainer.Builder setStatus(String status) {
-            this.status= status;
-            return this;
-        }
-
-        //Set EmailAddress
+        //Set Email Address
         public Trainer.Builder setEmailAddress(String emailAddress) {
             this.emailAddress= emailAddress;
             return this;

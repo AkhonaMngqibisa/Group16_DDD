@@ -1,3 +1,9 @@
+<<<<<<<<< Temporary merge branch 1
+package za.ac.cput.Entity;
+/* Hlumelo Mpotulo
+=======
+=========
+>>>>>>>>> Temporary merge branch 2
 package za.ac.cput.Entity;
 /* Hlumelo Mpotulo
    215226348
