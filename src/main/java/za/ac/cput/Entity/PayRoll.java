@@ -1,7 +1,7 @@
 package za.ac.cput.Entity;
 /* Payroll.java
 Entity for the Payroll.
-Author: Bokang Molaoa (218131097)
+Author: Bokang Molaoa (218131097) ADP3 Assignment 3.
 Date: 09 June 2021
 */
 
