@@ -1,6 +1,5 @@
 package za.ac.cput.Entity;
 
-import java.util.Date;
 import java.util.Objects;
 /**
  Report.java
@@ -11,7 +10,7 @@ import java.util.Objects;
 
 public class Report {
     private int reportID, trainerID;
-    private Date reportDate;
+    private String reportDate;
     private String attendance;
 
 
@@ -34,7 +33,7 @@ public class Report {
         return trainerID;
     }
 
-    public Date getReportDate() {
+    public String getReportDate() {
         return reportDate;
     }
 
@@ -63,7 +62,7 @@ public class Report {
     public static class Builder
     {
         private int reportID, trainerID;
-        private Date reportDate;
+        private String reportDate;
         private String attendance;
 
         public Builder setReportID(int reportID) {
@@ -76,7 +75,7 @@ public class Report {
             return this;
         }
 
-        public Builder setReportDate(Date reportDate) {
+        public Builder setReportDate(String reportDate) {
             this.reportDate = reportDate;
             return this;
         }

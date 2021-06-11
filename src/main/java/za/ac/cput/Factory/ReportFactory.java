@@ -10,12 +10,13 @@ import java.util.Date;
  */
 
 public class ReportFactory {
-    public static Report.Builder createReport(int reportID, int trainerID,
-                                              Date reportDate, String attendance) {
+    public static Report createReport(int reportID, int trainerID,
+                                      String reportDate, String attendance) {
         return new Report.Builder().
                 setReportID(reportID)
                 .setTrainerID(trainerID)
                 .setReportDate
-                        (reportDate).setAttendance(attendance);
+                        (reportDate).setAttendance(attendance).build();
     }
+
 }
