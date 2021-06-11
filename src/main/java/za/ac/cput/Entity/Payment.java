@@ -1,4 +1,5 @@
 package za.ac.cput.Entity;
+import java.lang.constant.Constable;
 import java.util.Date;
 
 /* Payment.java
@@ -7,21 +8,20 @@ Author: Bongisa Mpahleni (216205999)
 Date: 09 June 2021
 */
 
-import java.text.DateFormat;
+
 
 public class Payment {
 
 private  int paymentID;
 private  int memberID;
-private  double paymentAmountID;
-private Date paymentDateID;
-
+private  double paymentAmount;
+private String paymentDate;
 
     public Payment(Builder builder) {
         this.paymentID = builder.paymentID;
         memberID = builder.memberID;
-        this.paymentAmountID = builder.paymentAmountID;
-        this.paymentDateID = builder.paymentDateID;
+        this.paymentAmount = builder.paymentAmount;
+        this.paymentDate = builder.paymentDate;
     }
 
     public int getPaymentID() {
@@ -32,12 +32,12 @@ private Date paymentDateID;
         return memberID;
     }
 
-    public double getPaymentAmountID() {
-        return paymentAmountID;
+    public double getPaymentAmount() {
+        return paymentAmount;
     }
 
-    public Date getPaymentDateID() {
-        return paymentDateID;
+    public String getPaymentDate() {
+        return paymentDate;
     }
 
     @Override
@@ -45,22 +45,23 @@ private Date paymentDateID;
         return "Payment{" +
                 "paymentID=" + paymentID +
                 ", MemberID=" + memberID +
-                ", paymentAmountID=" + paymentAmountID +
-                ", paymentDateID=" + paymentDateID +
+                ", paymentAmount=" + paymentAmount +
+                ", paymentDate=" + paymentDate +
                 '}';
     }
 
     public static class Builder
     {
 
+
         private  int paymentID;
         private  int memberID;
-        private  double paymentAmountID;
-        private Date paymentDateID;
+        private  double paymentAmount;
+        private String paymentDate;
 
 
         //Set paymentID
-        public Builder setPayment(int paymentID)
+        public Builder setPaymentID(int paymentID)
         {
             this.paymentID= paymentID;
             return this;
@@ -73,16 +74,16 @@ private Date paymentDateID;
         }
 
         //Set PaymentAmount
-        public Builder setPaymentAmountID(int paymentAmountID)
+        public Builder setPaymentAmount(double paymentAmount)
         {
-            this.paymentAmountID= paymentAmountID;
+            this.paymentAmount= paymentAmount;
             return this;
         }
 
         //Set paymentDAte
-        public Builder setpayMentDate(Date paymentDateID)
+        public Builder setpayMentDate(String paymentDate)
         {
-            this.paymentDateID= paymentDateID;
+            this.paymentDate= paymentDate;
             return this;
         }
 
@@ -99,8 +100,8 @@ private Date paymentDateID;
 
             this.paymentID= payment.paymentID;
             this.memberID=payment.memberID;
-            this.paymentAmountID=payment.paymentAmountID;
-            this.paymentDateID=payment.paymentDateID;
+            this.paymentAmount=payment.paymentAmount;
+            this.paymentDate=payment.paymentDate;
 
 
             return this;
