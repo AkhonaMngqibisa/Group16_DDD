@@ -2,7 +2,7 @@ package za.ac.cput.Factory;
 /* TrainerFactoryTest.java
 Test TrainerFactory.
 Author: Bokang Molaoa (218131097)
-Date: 10 June 2021
+Date: 09 June 2021
 
 */
 import org.junit.jupiter.api.Disabled;
