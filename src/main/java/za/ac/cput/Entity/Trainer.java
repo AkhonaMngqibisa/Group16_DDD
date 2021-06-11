@@ -38,12 +38,12 @@ public class Trainer {
     }
 
     public static class Builder {
-        private String firstName, lastName, address, phoneNo, status, emailAddress,password;
+        private String firstName, lastName, address, phoneNo, emailAddress,password;
         private int trainerID, age;
 
-        //Set Member ID
-        public Builder setMemberID(int memberID) {
-            this.trainerID=memberID;
+        //Set Trainer ID
+        public Builder setTrainerID(int trainerID) {
+            this.trainerID=trainerID;
             return this;
         }
         //Set Firstname
@@ -65,12 +65,6 @@ public class Trainer {
         //Set PhoneNumber
         public Builder setPhoneNo(String phoneNo) {
             this.phoneNo= phoneNo;
-            return this;
-        }
-
-        //Set status
-        public Trainer.Builder setStatus(String status) {
-            this.status= status;
             return this;
         }
 
