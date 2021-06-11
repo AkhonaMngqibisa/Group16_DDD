@@ -1,0 +1,19 @@
+package za.ac.cput.Factory;
+
+import za.ac.cput.Entity.Package;
+/**
+ Factory: Package
+ @Author: Zimkhitha Nkqenkqa 216280427
+ Date: 09 June 2021
+ */
+
+
+public class PackageFactory {
+    public static Package.Builder createPackage(int packageID, int membershipID, int hoursPerWeek, double price, String packageName){
+        return new Package.Builder().setPackageID(packageID)
+                .setMembershipID(membershipID)
+                .setHoursPerWeek(hoursPerWeek)
+                .setPrice(price).setPackageName(packageName);
+    }
+}
+
