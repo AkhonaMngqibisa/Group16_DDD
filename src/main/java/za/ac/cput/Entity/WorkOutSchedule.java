@@ -66,40 +66,42 @@ public class WorkOutSchedule {
             return new WorkOutSchedule(this);
         }
 
-        public int getWorkoutId() {
-            return this.workoutId;
-        }
 
-        public int getScheduleId() {
-            return this.scheduleId;
-        }
+    }
 
-        public int getTrainerId() {
-            return this.trainerId;
-        }
+    public int getWorkoutId() {
+        return this.workoutId;
+    }
 
-        public int getMemberId() {
-            return this.memberId;
-        }
+    public int getScheduleId() {
+        return this.scheduleId;
+    }
 
-        public String getWorkoutDate() {
-            return this.workoutDate;
-        }
+    public int getTrainerId() {
+        return this.trainerId;
+    }
 
-        public String getWorkoutTime() {
-            return this.workoutTime;
-        }
+    public int getMemberId() {
+        return this.memberId;
+    }
 
-        @Override
-        public String toString() {
-            String data = "";
-            data += "{WorkoutId: " + workoutId + ",";
-            data += "{scheduleId: " + scheduleId + ",";
-            data += "{trainerId: " + trainerId + ",";
-            data += "{memberId: " + memberId + ",";
-            data += "{workoutDate: " + workoutDate + ",";
-            data += "{workoutTime: " + workoutTime + ",";
-            return data;
-        }
+    public String getWorkoutDate() {
+        return this.workoutDate;
+    }
+
+    public String getWorkoutTime() {
+        return this.workoutTime;
+    }
+
+    @Override
+    public String toString() {
+        String data = "";
+        data += "{WorkoutId: " + workoutId + ",";
+        data += "{scheduleId: " + scheduleId + ",";
+        data += "{trainerId: " + trainerId + ",";
+        data += "{memberId: " + memberId + ",";
+        data += "{workoutDate: " + workoutDate + ",";
+        data += "{workoutTime: " + workoutTime + ",";
+        return data;
     }
 }

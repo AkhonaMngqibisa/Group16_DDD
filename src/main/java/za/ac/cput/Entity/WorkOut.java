@@ -34,27 +34,28 @@ public class WorkOut {
             this.workoutName = workoutName;
             return this;
         }
-        public WorkOut build(){
+        public WorkOut build() {
             return new WorkOut(this);
 
         }
-        public int getWorkoutId(){
-            return this.workoutId;
-        }
-        public String getWorkoutName(){
-            return this.workoutName;
-        }
-        public String getWorkoutDescription(){
-            return this.workoutDescription;
-        }
-        @Override
-        public String toString(){
-            String data = "";
-            data += "{WorkoutId: "+workoutId+",";
-            data += "{WorkoutName: "+workoutName+",";
-            data += "{WorkoutDescription: "+workoutDescription+",";
-            return data;
-        }
 
+    }
+
+    public int getWorkoutId(){
+        return this.workoutId;
+    }
+    public String getWorkoutName(){
+        return this.workoutName;
+    }
+    public String getWorkoutDescription(){
+        return this.workoutDescription;
+    }
+    @Override
+    public String toString(){
+        String data = "";
+        data += "{WorkoutId: "+workoutId+",";
+        data += "{WorkoutName: "+workoutName+",";
+        data += "{WorkoutDescription: "+workoutDescription+",";
+        return data;
     }
 }
