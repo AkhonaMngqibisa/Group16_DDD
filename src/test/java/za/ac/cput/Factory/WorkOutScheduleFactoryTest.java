@@ -21,6 +21,7 @@ class WorkOutScheduleFactoryTest {
     @Test
     void testIdentity(){
         // Test two identical classes
+        //
         assertSame(morning, afternoon);
         System.out.println("Morning and Afternoon are identical");
     }

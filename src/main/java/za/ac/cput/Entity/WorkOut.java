@@ -1,6 +1,7 @@
 package za.ac.cput.Entity;
 /* Hlumelo Mpotulo
    215226348
+   workout entity
 
  */
 
