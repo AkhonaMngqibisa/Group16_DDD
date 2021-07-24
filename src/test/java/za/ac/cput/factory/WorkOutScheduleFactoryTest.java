@@ -1,10 +1,10 @@
-package za.ac.cput.Factory;
+package za.ac.cput.factory;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
-import za.ac.cput.Entity.WorkOutSchedule;
+import za.ac.cput.entity.WorkOutSchedule;
 
 import static org.junit.jupiter.api.Assertions.*;
 

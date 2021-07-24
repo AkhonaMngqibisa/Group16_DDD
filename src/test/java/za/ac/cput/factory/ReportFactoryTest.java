@@ -4,9 +4,10 @@ package za.ac.cput.factory;
  @Author: Zimkhitha Nkqenkqa 216280427
  Date: 09 June 2021
  */
-import org.junit.Assert;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Report;
+
 
 class ReportFactoryTest {
 
@@ -17,6 +18,6 @@ class ReportFactoryTest {
                 "2021/03/16",
                 "Weekly");
 
-        Assert.assertEquals(report, report);
+        assertEquals(report, report);
     }
 }

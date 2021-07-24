@@ -1,6 +1,6 @@
-package za.ac.cput.Factory;
+package za.ac.cput.factory;
 
-import za.ac.cput.Entity.WorkOut;
+import za.ac.cput.entity.WorkOut;
 
 public class WorkOutFactory {
 
