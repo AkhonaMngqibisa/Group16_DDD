@@ -2,6 +2,7 @@ package za.ac.cput.factory;
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Member;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /* MemberFactoryTest.java
 Test MemberFactory
@@ -15,6 +16,8 @@ class MemberFactoryTest
     {
         Member member = MemberFactory.createMember("Akhona", "Mngqibisa", "Ny1 No147 Gugulethu", "0621982193", 22,"Active","a@gmail.com","123456");
         System.out.println(member);
+
+       assertTrue(member instanceof Member);
     }
 
 }

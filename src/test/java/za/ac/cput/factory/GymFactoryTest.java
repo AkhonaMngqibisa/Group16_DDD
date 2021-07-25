@@ -3,6 +3,9 @@ package za.ac.cput.factory;
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Gym;
+import za.ac.cput.entity.Member;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /* GymFactoryTest.java
 Test GymFactory
@@ -16,6 +19,8 @@ class GymFactoryTest
     {
         Gym gym = GymFactory.createGym("Denis's Gym ", "Ny1 Cnr Ny6 Gugulethu");
         System.out.println(gym);
+
+        assertTrue(gym instanceof Gym);
     }
 
 }
