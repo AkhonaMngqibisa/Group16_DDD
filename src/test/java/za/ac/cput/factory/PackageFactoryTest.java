@@ -4,9 +4,11 @@ package za.ac.cput.factory;
  @Author: Zimkhitha Nkqenkqa 216280427
  Date: 09 June 2021
  */
-import org.junit.Assert;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Package;
+
 
 class PackageFactoryTest {
 
@@ -16,6 +18,6 @@ class PackageFactoryTest {
                 8, 350.00,
                 "Mega Package");
 
-        Assert.assertEquals(aPackage, aPackage);
+        assertEquals(aPackage, aPackage);
     }
 }

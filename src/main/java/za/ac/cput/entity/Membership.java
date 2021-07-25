@@ -18,6 +18,14 @@ public class Membership {
         private double totalFees;
         private Date expireDate;
 
+        public Builder(Membership membership) {
+            this.id = membership.id;
+            this.memberID = membership.memberID;
+            this.type = membership.type;
+            this.totalFees = membership.totalFees;
+            this.expireDate = membership.expireDate;
+        }
+
         public Builder(int id) {
             this.id = id;
         }
@@ -56,6 +64,16 @@ public class Membership {
             m.expireDate = c.getTime();
 
             return m;
+        }
+
+        public Builder copy(Membership membership) {
+            this.id = membership.id;
+            this.memberID = membership.memberID;
+            this.type = membership.type;
+            this.totalFees = membership.totalFees;
+            this.expireDate = membership.expireDate;
+
+            return this;
         }
     }
 
@@ -100,12 +118,14 @@ public class Membership {
 
     public String toString() {
         return String.format(
-            "MEMBERSHIP\n" +
-            "ID: %d\n" +
-            "Member ID: %d\n" +
-            "Type: %s\n" +
-            "Total fees: %.2f\n" +
-            "Expiry Date: %s\n",
+                """
+                        MEMBERSHIP
+                        ID: %d
+                        Member ID: %d
+                        Type: %s
+                        Total fees: %.2f
+                        Expiry Date: %s
+                        """,
             id, memberID, type, totalFees, expireDate.toString()
         );
     }
