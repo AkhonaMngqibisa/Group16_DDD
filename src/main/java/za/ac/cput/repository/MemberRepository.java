@@ -3,6 +3,11 @@ package za.ac.cput.repository;
 import za.ac.cput.entity.Member;
 import java.util.HashSet;
 import java.util.Set;
+/* MemberRepository.java
+Repository for the Member entity
+Author: Akhona Mngqibisa (217302394)
+Date: 21 July 2021
+*/
 
 public class MemberRepository implements IMemberRepository{
 

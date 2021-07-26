@@ -4,6 +4,11 @@ import za.ac.cput.entity.Gym;
 import java.util.HashSet;
 import java.util.Set;
 
+/* GymRepository.java
+Repository for the Gym entity
+Author: Akhona Mngqibisa (217302394)
+Date: 21 July 2021
+*/
 public class GymRepository implements IGymRepository {
 
 private static GymRepository gymRep = null;

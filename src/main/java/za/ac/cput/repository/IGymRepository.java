@@ -4,7 +4,6 @@ import za.ac.cput.entity.Gym;
 
 import java.util.Set;
 
-
 /* IGymRepository.java
 Interface Repository for the Gym entity
 Author: Akhona Mngqibisa (217302394)

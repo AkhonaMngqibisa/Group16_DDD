@@ -45,7 +45,6 @@ void e_delete()
     System.out.println("Delete: "+success);
 }
 
-
 @Test
 void d_getAll()
 {
