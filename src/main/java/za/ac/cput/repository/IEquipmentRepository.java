@@ -1,6 +1,6 @@
 package za.ac.cput.repository;
 
-/* EquipmentRepository.java
+/* IEquipmentRepository.java
 Interface Repository for the Equipment
 Author: Lilitha Moni (219068429)
 Date: 22 July 2021
