@@ -20,6 +20,33 @@ public class Trainer {
         this.emailAddress = builder.emailAddress;
         this.password = builder.password;
     }
+    public int getTrainerID() {
+        return trainerID;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public String getPassword() {
+        return password;
+    }
     @Override
     public String toString() {
         return "Trainer{" +
