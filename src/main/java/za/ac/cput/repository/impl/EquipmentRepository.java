@@ -1,4 +1,4 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.impl;
 
 /* EquipmentRepository.java
 Class Repository for the Equipment
@@ -13,16 +13,16 @@ import java.util.List;
 
 public class EquipmentRepository implements IEquipmentRepository {
 
-        private static za.ac.cput.repository.EquipmentRepository equipmentRep = null;
+        private static EquipmentRepository equipmentRep = null;
         private List<Equipment> equipmentSet = null;
 
         private EquipmentRepository() {
             equipmentSet = new ArrayList<>();
         }
 
-        public static za.ac.cput.repository.EquipmentRepository getEquipmentRep() {
+        public static EquipmentRepository getEquipmentRep() {
             if(equipmentRep == null) {
-                equipmentRep = new za.ac.cput.repository.EquipmentRepository();
+                equipmentRep = new EquipmentRepository();
             }
             return equipmentRep;
         }

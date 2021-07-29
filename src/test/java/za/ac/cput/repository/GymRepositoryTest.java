@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.Gym;
 import za.ac.cput.factory.GymFactory;
+import za.ac.cput.repository.impl.GymRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 

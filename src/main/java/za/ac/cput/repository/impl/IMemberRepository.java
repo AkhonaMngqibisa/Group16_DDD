@@ -1,6 +1,7 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.impl;
 
 import za.ac.cput.entity.Member;
+import za.ac.cput.repository.IRepository;
 
 import java.util.Set;
 /* IMemberRepository.java

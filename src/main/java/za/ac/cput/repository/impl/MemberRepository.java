@@ -1,6 +1,7 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.impl;
 
 import za.ac.cput.entity.Member;
+
 import java.util.HashSet;
 import java.util.Set;
 /* MemberRepository.java
@@ -9,7 +10,7 @@ Author: Akhona Mngqibisa (217302394)
 Date: 21 July 2021
 */
 
-public class MemberRepository implements IMemberRepository{
+public class MemberRepository implements IMemberRepository {
 
     private static MemberRepository membRep = null;
     private Set<Member> membSet = null;

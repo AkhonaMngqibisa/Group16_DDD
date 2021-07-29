@@ -1,4 +1,4 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.impl;
 /**
  IPackageRepository.java
  Repository: IPackageRepository
@@ -7,6 +7,7 @@ package za.ac.cput.repository;
  */
 
 import za.ac.cput.entity.Package;
+import za.ac.cput.repository.IRepository;
 
 import java.util.Set;
 

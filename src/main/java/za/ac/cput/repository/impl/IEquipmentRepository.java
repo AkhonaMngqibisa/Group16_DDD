@@ -1,4 +1,4 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.impl;
 
 /* IEquipmentRepository.java
 Interface Repository for the Equipment
@@ -7,6 +7,8 @@ Date: 22 July 2021
 */
 
 import za.ac.cput.entity.Equipment;
+import za.ac.cput.repository.IRepository;
+
 import java.util.List;
 
 public interface IEquipmentRepository extends IRepository<Equipment, Integer> {

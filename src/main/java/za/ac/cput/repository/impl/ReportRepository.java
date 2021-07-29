@@ -1,4 +1,4 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.impl;
 
 /**
  ReportRepository.java
@@ -12,7 +12,7 @@ import za.ac.cput.entity.Report;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ReportRepository implements IReportRepository{
+public class ReportRepository implements IReportRepository {
     private static ReportRepository reportRepository = null;
     private Set<Report> reportSet;
 

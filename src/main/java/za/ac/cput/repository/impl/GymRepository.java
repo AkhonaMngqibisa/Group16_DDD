@@ -1,6 +1,7 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.impl;
 
 import za.ac.cput.entity.Gym;
+
 import java.util.HashSet;
 import java.util.Set;
 

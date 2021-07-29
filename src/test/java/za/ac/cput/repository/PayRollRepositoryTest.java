@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.PayRoll;
 import za.ac.cput.factory.PayRollFactory;
+import za.ac.cput.repository.impl.PayRollRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 

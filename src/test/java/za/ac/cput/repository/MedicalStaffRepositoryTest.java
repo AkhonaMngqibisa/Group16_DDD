@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.MedicalStaff;
 import za.ac.cput.factory.MedicalStaffFactory;
+import za.ac.cput.repository.impl.MedicalStaffRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 

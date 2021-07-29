@@ -1,4 +1,4 @@
-package za.ac.cput.repository;
+package za.ac.cput.repository.impl;
 
 /* SupplierRepository.java
 Class Repository for the Supplier
@@ -13,16 +13,16 @@ import java.util.List;
 
 public class SupplierRepository implements ISupplierRepository {
 
-    private static za.ac.cput.repository.SupplierRepository suppRepository = null;
+    private static SupplierRepository suppRepository = null;
     private List<Supplier> suppSet = null;
 
     private SupplierRepository() {
         suppSet = new ArrayList<>();
     }
 
-    public static za.ac.cput.repository.SupplierRepository getSuppRepository() {
+    public static SupplierRepository getSuppRepository() {
         if(suppRepository == null) {
-            suppRepository = new za.ac.cput.repository.SupplierRepository();
+            suppRepository = new SupplierRepository();
         }
         return suppRepository;
     }

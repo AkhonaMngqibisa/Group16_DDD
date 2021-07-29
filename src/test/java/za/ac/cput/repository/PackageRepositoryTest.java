@@ -9,6 +9,8 @@ package za.ac.cput.repository;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Package;
 import za.ac.cput.factory.PackageFactory;
+import za.ac.cput.repository.impl.IPackageRepository;
+import za.ac.cput.repository.impl.PackageRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
