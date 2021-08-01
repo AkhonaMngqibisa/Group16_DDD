@@ -8,16 +8,16 @@ Date: 22 July 2021
 
 import za.ac.cput.entity.Equipment;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class EquipmentRepository implements IEquipmentRepository {
 
         private static EquipmentRepository equipmentRep = null;
-        private List<Equipment> equipmentSet = null;
+        private Set<Equipment> equipmentSet = null;
 
         private EquipmentRepository() {
-            equipmentSet = new ArrayList<>();
+            equipmentSet = new HashSet<>();
         }
 
         public static EquipmentRepository getEquipmentRep() {
@@ -68,7 +68,7 @@ public class EquipmentRepository implements IEquipmentRepository {
         }
 
         @Override
-        public List<Equipment> getAll() {
+        public Set<Equipment> getAll() {
             return equipmentSet;
         }
 }

@@ -2,7 +2,7 @@ package za.ac.cput.service.impl;
 
 import za.ac.cput.entity.Supplier;
 import za.ac.cput.repository.impl.SupplierRepository;
-import java.util.List;
+import java.util.Set;
 
 /*
 SupplierServiceImpl.java
@@ -57,7 +57,7 @@ public class SupplierServiceImpl implements SupplierService {
         return this.delete(suppID);
     }
 
-    public List<Supplier> getAll() {
+    public Set<Supplier> getAll() {
         return this.suppRepository.getAll();
     }
 }

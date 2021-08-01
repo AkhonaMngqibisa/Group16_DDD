@@ -9,8 +9,8 @@ Date: 22 July 2021
 import za.ac.cput.entity.Equipment;
 import za.ac.cput.repository.IRepository;
 
-import java.util.List;
+import java.util.Set;
 
 public interface IEquipmentRepository extends IRepository<Equipment, Integer> {
-    public List<Equipment> getAll();
+    public Set<Equipment> getAll();
 }

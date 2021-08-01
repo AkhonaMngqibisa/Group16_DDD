@@ -2,7 +2,7 @@ package za.ac.cput.service.impl;
 
 import za.ac.cput.entity.Equipment;
 import za.ac.cput.repository.impl.EquipmentRepository;
-import java.util.List;
+import java.util.Set;
 
 /*
 EquipmentServiceImpl.java
@@ -57,7 +57,7 @@ public class EquipmentServiceImpl implements EquipmentService {
         return this.delete(equipmentID);
     }
 
-    public List<Equipment> getAll() {
+    public Set<Equipment> getAll() {
         return this.equipmentRep.getAll();
     }
 }
