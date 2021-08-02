@@ -46,7 +46,7 @@ public class GymServiceImpl implements GymService {
     @Override
     public boolean delete(Integer gymId) {
 
-        return this.delete(gymId);
+        return this.gymrepo.delete(gymId);
     }
 
 

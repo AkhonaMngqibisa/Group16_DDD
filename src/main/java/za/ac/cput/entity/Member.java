@@ -17,7 +17,7 @@ public class Member
     List<Member> memberList = new ArrayList<>();
 
     //Constructor
-    private Member(Builder builder)
+    public Member(Builder builder)
     {
         this.memberID= builder.memberID;
         this.firstName= builder.firstName;
@@ -28,6 +28,10 @@ public class Member
         this.status = builder.status;
         this.emailAddress = builder.emailAddress;
         this.password = builder.password;
+    }
+
+    public Member() {
+
     }
 
     public int getMemberID() {

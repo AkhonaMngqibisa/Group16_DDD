@@ -9,9 +9,6 @@ public class MemberServiceImpl implements MemberService {
     private static MemberService membservice;
     private MemberRepository membrepo;
 
-    public MemberServiceImpl(MemberRepository membrepo) {
-        this.membrepo = membrepo;
-    }
 
     public MemberServiceImpl() {
         this.membrepo = MemberRepository.getMembRep();
