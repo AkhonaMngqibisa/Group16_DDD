@@ -9,9 +9,9 @@ Date: 22 July 2021
 import za.ac.cput.entity.Supplier;
 import za.ac.cput.repository.IRepository;
 
-import java.util.List;
+import java.util.Set;
 
 public interface ISupplierRepository extends IRepository<Supplier, Integer> {
-    public List<Supplier> getAll();
+    public Set<Supplier> getAll();
 }
 

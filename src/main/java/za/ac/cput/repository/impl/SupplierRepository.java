@@ -8,16 +8,16 @@ Date: 22 July 2021
 
 import za.ac.cput.entity.Supplier;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SupplierRepository implements ISupplierRepository {
 
     private static SupplierRepository suppRepository = null;
-    private List<Supplier> suppSet = null;
+    private Set<Supplier> suppSet = null;
 
     private SupplierRepository() {
-        suppSet = new ArrayList<>();
+        suppSet = new HashSet<>();
     }
 
     public static SupplierRepository getSuppRepository() {
@@ -68,7 +68,7 @@ public class SupplierRepository implements ISupplierRepository {
     }
 
     @Override
-    public List<Supplier> getAll() {
+    public Set<Supplier> getAll() {
         return suppSet;
     }
 }
