@@ -1,5 +1,9 @@
 package za.ac.cput.service.impl;
-
+/* GymServiceImplTest.java
+Service Test for the Gym
+Author: Akhona Mngqibisa (217302394)
+Date: 02 August 2021
+*/
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
