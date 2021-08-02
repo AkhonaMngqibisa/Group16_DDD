@@ -33,6 +33,10 @@ public class PayRollServiceImpl implements PayRollService {
 
     @Override
     public PayRoll read(Integer integer) {
+        return null;
+    }
+
+    public PayRoll read(String integer) {
         return payRollRepository.read(integer);
     }
 
@@ -43,6 +47,10 @@ public class PayRollServiceImpl implements PayRollService {
 
     @Override
     public boolean delete(Integer integer) {
+        return false;
+    }
+
+    public boolean delete(String integer) {
         return payRollRepository.delete(integer);
     }
 
