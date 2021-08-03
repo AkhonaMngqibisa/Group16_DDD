@@ -1,13 +1,21 @@
 package za.ac.cput.service.impl;
+/**
+ ReportServiceTest.java
+ Service: ReportServiceTest
+ Author: Zimkhitha Nkqenkqa 216280427
+ Date: 02 July 2021
+ */
 
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.Report;
 import za.ac.cput.factory.ReportFactory;
 
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class ReportServiceImplTest {
 
     private static ReportServiceImpl reportServiceImpl = (ReportServiceImpl) ReportServiceImpl.getReportService();
@@ -30,8 +38,7 @@ public class ReportServiceImplTest {
     @Test
     void read() {
         Report read = reportServiceImpl.read(report.getReportID());
-        assertNotNull(read);
-        System.out.println("\nTo String:\n" + read.toString());
+        System.out.println("\nTo String:\n" + read);
     }
 
     @Test

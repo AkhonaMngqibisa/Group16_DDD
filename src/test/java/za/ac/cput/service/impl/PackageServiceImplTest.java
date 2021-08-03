@@ -1,11 +1,20 @@
 package za.ac.cput.service.impl;
+/**
+ PackageServiceTest.java
+ Service: PackageServiceTest
+ Author: Zimkhitha Nkqenkqa 216280427
+ Date: 02 July 2021
+ */
 
+
+import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.Package;
 import za.ac.cput.factory.PackageFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@TestMethodOrder(MethodOrderer.MethodName.class)
 class PackageServiceImplTest {
     private static PackageServiceImpl packageServiceImpl = (PackageServiceImpl) PackageServiceImpl.getPackageService();
     private static Package aPackage = PackageFactory.createPackage(035, 005,
@@ -26,8 +35,7 @@ class PackageServiceImplTest {
     @Test
     void read() {
         Package read = packageServiceImpl.read(aPackage.getPackageID());
-        assertNotNull(read);
-        System.out.println("\nRead:\n" + read.toString());
+        System.out.println("\nRead:\n" + read);
     }
 
     @Test
