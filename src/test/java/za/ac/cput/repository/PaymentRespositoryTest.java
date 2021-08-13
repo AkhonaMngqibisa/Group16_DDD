@@ -1,4 +1,4 @@
-package za.ac.cput.repository.impl;
+package za.ac.cput.repository;
 
 
 import org.junit.jupiter.api.MethodOrderer;
@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.entity.Payment;
 import za.ac.cput.factory.PaymentFactory;
+import za.ac.cput.repository.impl.PaymentRespository;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
