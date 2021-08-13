@@ -48,8 +48,6 @@ public class GymServiceImpl implements GymService {
 
         return this.gymrepo.delete(gymId);
     }
-
-
     public Set<Gym> getAll()
     {
         return this.gymrepo.getAll();

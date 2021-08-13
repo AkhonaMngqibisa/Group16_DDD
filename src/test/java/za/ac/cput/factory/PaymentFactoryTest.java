@@ -9,7 +9,7 @@ class PaymentFactoryTest {
     @Test
     public void createPayment(){
 
-        Payment payment=PaymentFactory.creatPayment(20,10,2.5,"2021/06/11");
+        Payment payment=PaymentFactory.creatPayment(20,"2021/06/11");
         System.out.println(payment.getPaymentID());
         assertNotNull(payment.getPaymentID());
         System.out.println(payment);

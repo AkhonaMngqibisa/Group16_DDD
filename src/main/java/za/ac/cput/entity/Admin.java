@@ -13,8 +13,10 @@ private String fisrtName;
 private String lastName;
 private String phoneNo;
 private String emailAddress;
+private int ID;
 
     public Admin(Builder builder) {
+        this.ID = builder.ID;
         this.fisrtName = builder.firstName;
         this.lastName = builder.lastName;
         this.phoneNo = builder.phoneNo;
@@ -37,13 +39,18 @@ private String emailAddress;
         return emailAddress;
     }
 
+    public Integer getID() {
+        return ID;
+    }
+
     @Override
     public String toString() {
         return "Admin{" +
-                "firstName='" + fisrtName + '\'' +
-                ", LastName='" + lastName + '\'' +
+                "fisrtName='" + fisrtName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", phoneNo='" + phoneNo + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
+                ", ID='" + ID + '\'' +
                 '}';
     }
 
@@ -51,7 +58,12 @@ private String emailAddress;
     {
 
         private String firstName,lastName,phoneNo,emailAddress;
+        private int ID;
 
+        public Builder setID(int ID) {
+            this.ID = ID;
+            return this;
+        }
 
         //Set Firstname
         public Builder setFirstName(String firstName)
@@ -90,7 +102,7 @@ private String emailAddress;
         //Copy method
         public Builder copy(Admin admin)
         {
-
+            this.ID = admin.ID;
             this.firstName= admin.fisrtName;
             this.lastName=admin.lastName;
             this.phoneNo=admin.phoneNo;

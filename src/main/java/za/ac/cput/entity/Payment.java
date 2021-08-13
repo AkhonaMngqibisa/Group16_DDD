@@ -11,13 +11,11 @@ Date: 09 June 2021
 public class Payment {
 
 private  int paymentID;
-private  int memberID;
 private  double paymentAmount;
 private String paymentDate;
 
     public Payment(Builder builder) {
         this.paymentID = builder.paymentID;
-        memberID = builder.memberID;
         this.paymentAmount = builder.paymentAmount;
         this.paymentDate = builder.paymentDate;
     }
@@ -26,15 +24,11 @@ private String paymentDate;
         return paymentID;
     }
 
-    public int getMemberID() {
-        return memberID;
-    }
-
-    public double getPaymentAmount() {
+    public double getPaymentAmount(){
         return paymentAmount;
     }
 
-    public String getPaymentDate() {
+    public String getPaymentDate(){
         return paymentDate;
     }
 
@@ -42,7 +36,6 @@ private String paymentDate;
     public String toString() {
         return "Payment{" +
                 "paymentID=" + paymentID +
-                ", MemberID=" + memberID +
                 ", paymentAmount=" + paymentAmount +
                 ", paymentDate=" + paymentDate +
                 '}';
@@ -53,7 +46,6 @@ private String paymentDate;
 
 
         private  int paymentID;
-        private  int memberID;
         private  double paymentAmount;
         private String paymentDate;
 
@@ -64,13 +56,6 @@ private String paymentDate;
             this.paymentID= paymentID;
             return this;
         }
-        //Set MemberID
-        public Builder setMemberID(int memberID)
-        {
-            this.memberID= memberID;
-            return this;
-        }
-
         //Set PaymentAmount
         public Builder setPaymentAmount(double paymentAmount)
         {
@@ -97,7 +82,6 @@ private String paymentDate;
         {
 
             this.paymentID= payment.paymentID;
-            this.memberID=payment.memberID;
             this.paymentAmount=payment.paymentAmount;
             this.paymentDate=payment.paymentDate;
 
