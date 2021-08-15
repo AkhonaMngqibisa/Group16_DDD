@@ -15,6 +15,11 @@ public class Gym
     List<Gym> gymList = new ArrayList<>();
 
     //Constructor
+
+
+    public Gym() {
+    }
+
     private Gym(Builder builder)
     {
         this.gymID= builder.gymID;

@@ -1,10 +1,12 @@
 package za.ac.cput.service.impl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Member;
 import za.ac.cput.repository.impl.MemberRepository;
 
 import java.util.Set;
 
+@Service
 public class MemberServiceImpl implements MemberService {
     private static MemberService membservice;
     private MemberRepository membrepo;
@@ -41,6 +43,7 @@ public class MemberServiceImpl implements MemberService {
        return this.membrepo.delete(memberId);
     }
 
+    @Override
     public Set<Member> getAll()
     {
         return this.membrepo.getAll();

@@ -4,11 +4,13 @@ Implementation for the Gym Serve
 Author: Akhona Mngqibisa (217302394)
 Date: 29 July 2021
 */
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Gym;
 import za.ac.cput.repository.impl.GymRepository;
 
 import java.util.Set;
 
+@Service
 public class GymServiceImpl implements GymService {
     private static GymService gymservice;
     private GymRepository  gymrepo;
@@ -48,6 +50,8 @@ public class GymServiceImpl implements GymService {
 
         return this.gymrepo.delete(gymId);
     }
+
+    @Override
     public Set<Gym> getAll()
     {
         return this.gymrepo.getAll();

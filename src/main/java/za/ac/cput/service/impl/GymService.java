@@ -7,5 +7,8 @@ Date: 29 July 2021
 import za.ac.cput.entity.Gym;
 import za.ac.cput.service.IService;
 
+import java.util.Set;
+
 public interface GymService extends IService<Gym, Integer> {
+    public Set<Gym> getAll();
 }

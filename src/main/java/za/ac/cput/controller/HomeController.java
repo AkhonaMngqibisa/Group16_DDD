@@ -9,6 +9,6 @@ public class HomeController
 {
     @RequestMapping({"/", "/home"})
     String home() {
-        return "Welcome to GymManagement Application!";
+        return "Welcome to Gym Management Application!";
     }
 }
