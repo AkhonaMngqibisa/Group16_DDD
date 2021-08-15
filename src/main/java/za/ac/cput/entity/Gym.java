@@ -14,18 +14,16 @@ public class Gym
     private String gymName, gymAddress;
     List<Gym> gymList = new ArrayList<>();
 
-    //Constructor
 
-
-    public Gym() {
-    }
-
-    private Gym(Builder builder)
+    public Gym(Builder builder)
     {
         this.gymID= builder.gymID;
         this.gymName= builder.gymName;
         this.gymAddress = builder.gymAddress;
     }
+    public Gym() {
+    }
+
 
     public int getGymID() {
         return gymID;

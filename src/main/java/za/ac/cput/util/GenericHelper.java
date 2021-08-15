@@ -14,5 +14,14 @@ public class GenericHelper
         return UUID.randomUUID().toString().hashCode();
     }
 
+    public static boolean isEmpty(int i)
+    {
+        if(i==0)
+
+            return true;
+
+        else
+            return false;
+    }
 
 }
