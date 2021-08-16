@@ -1,5 +1,6 @@
 package za.ac.cput.service.impl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Equipment;
 import za.ac.cput.repository.impl.EquipmentRepository;
 import java.util.Set;
@@ -11,7 +12,7 @@ Author: Lilitha Moni (219068429)
 Date: 28 July 2021
 */
 
-
+@Service
 public class EquipmentServiceImpl implements EquipmentService {
 
     private static EquipmentService SEquipment;
@@ -56,7 +57,6 @@ public class EquipmentServiceImpl implements EquipmentService {
 
         return this.delete(equipmentID);
     }
-
     public Set<Equipment> getAll() {
         return this.equipmentRep.getAll();
     }
