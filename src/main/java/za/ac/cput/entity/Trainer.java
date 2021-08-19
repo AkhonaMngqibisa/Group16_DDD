@@ -10,6 +10,8 @@ public class Trainer {
     private String firstName, lastName, phoneNo, address;
     private String emailAddress,password;
 
+    private Trainer() {}
+
     //Constructor
     private Trainer(Builder builder) {
         this.trainerID= builder.trainerID;
@@ -112,5 +114,4 @@ public class Trainer {
             return this;
         }
     }
-
 }

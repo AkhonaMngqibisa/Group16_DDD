@@ -5,10 +5,12 @@
  */
 package za.ac.cput.service.impl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Trainer;
 import za.ac.cput.repository.impl.TrainerRepository;
 import java.util.Set;
 
+@Service
 public class TrainerServiceImpl implements TrainerService {
     private static TrainerService trainerService;
     private final TrainerRepository trainerRepository;

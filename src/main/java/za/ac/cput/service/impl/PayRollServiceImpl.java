@@ -5,10 +5,16 @@
  */
 package za.ac.cput.service.impl;
 
+import org.springframework.stereotype.Service;
+import za.ac.cput.entity.MedicalStaff;
 import za.ac.cput.entity.PayRoll;
+import za.ac.cput.entity.Trainer;
+import za.ac.cput.repository.IRepository;
+import za.ac.cput.repository.impl.IPayRollRepository;
 import za.ac.cput.repository.impl.PayRollRepository;
 import java.util.Set;
 
+@Service
 public class PayRollServiceImpl implements PayRollService {
     private static PayRollService payRollService;
     private final PayRollRepository payRollRepository;
@@ -32,13 +38,7 @@ public class PayRollServiceImpl implements PayRollService {
     }
 
     @Override
-    public PayRoll read(Integer integer) {
-        return null;
-    }
-
-    public PayRoll read(String integer) {
-        return payRollRepository.read(integer);
-    }
+    public PayRoll read(Integer integer) { return payRollRepository.read(integer); }
 
     @Override
     public PayRoll update(PayRoll payRoll) {
@@ -50,9 +50,8 @@ public class PayRollServiceImpl implements PayRollService {
         return false;
     }
 
-    public boolean delete(String integer) {
-        return payRollRepository.delete(integer);
-    }
+    @Override
+    public boolean delete(String integer) { return payRollRepository.delete(integer); }
 
     public Set<PayRoll> getAll() {
         return payRollRepository.getAll();

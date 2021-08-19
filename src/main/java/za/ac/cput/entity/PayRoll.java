@@ -6,9 +6,12 @@ Date: 09 June 2021
 */
 
 public class PayRoll {
-    private String payrollID;
+    private int payrollID;
     private String trainerID;
     private String hours;
+
+private PayRoll() {}
+
 private PayRoll (Builder builder)
 {
     this.payrollID=builder.payrollID;
@@ -16,9 +19,7 @@ private PayRoll (Builder builder)
     this.hours=builder.hours;
 }
 
-    public String getPayrollID() {
-        return payrollID;
-    }
+    public int getPayrollID() { return payrollID; }
 
     public String getTrainerID() {
         return trainerID;
@@ -38,11 +39,11 @@ private PayRoll (Builder builder)
     }
 
     public static class Builder {
-        private String payrollID;
+        private int payrollID;
         private String trainerID;
         private String hours;
 
-        public Builder setPayrollID(String payrollID) {
+        public Builder setPayrollID(int payrollID) {
             this.payrollID = payrollID;
             return this;
         }
@@ -66,7 +67,5 @@ private PayRoll (Builder builder)
         public Builder copy(PayRoll payRoll) {
             return this;
         }
-
     }
-
 }

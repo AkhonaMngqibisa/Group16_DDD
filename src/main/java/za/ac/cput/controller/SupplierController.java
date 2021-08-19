@@ -14,14 +14,14 @@ Date:16 August 2021
 */
 
 @RestController
-@RequestMapping("/equipment")
+@RequestMapping("/supplier")
 public class SupplierController {
 
     @Autowired
     private SupplierService supplierService;
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
-
+    //@RequestMapping(value = "/create", method = RequestMethod.POST)
+    @PostMapping("/Create")
     public Supplier create(@RequestBody Supplier supplier)
     {
         Supplier newSupplier = SupplierFactory.createSupplier(supplier.getSupName(),supplier.getEqId());

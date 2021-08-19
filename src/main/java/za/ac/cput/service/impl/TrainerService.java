@@ -8,5 +8,8 @@ package za.ac.cput.service.impl;
 import za.ac.cput.entity.Trainer;
 import za.ac.cput.service.IService;
 
+import java.util.Set;
+
 public interface TrainerService extends IService<Trainer, Integer> {
+    public Set<Trainer> getAll();
 }

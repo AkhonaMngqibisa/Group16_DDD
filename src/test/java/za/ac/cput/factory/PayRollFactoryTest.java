@@ -14,27 +14,27 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PayRollFactoryTest {
     @Test
     public void createPayRoll() {
-        PayRoll payroll = PayRollFactory.createPayRoll("525555", "54222", "5");
+        PayRoll payroll = PayRollFactory.createPayRoll(8000, "500", "8");
         System.out.println(payroll);
         assertNotNull(payroll);
     }
 
     @Test
     void testEquality() {
-        PayRoll payroll = PayRollFactory.createPayRoll("525555", "54222", "5");
+        PayRoll payroll = PayRollFactory.createPayRoll(8000, "54222", "5");
         assertEquals("525555",payroll.getPayrollID());
     }
 
     @Test
     void testIdentity() {
-        PayRoll payroll = PayRollFactory.createPayRoll("525555", "54222", "5");
+        PayRoll payroll = PayRollFactory.createPayRoll(8000, "54222", "5");
         assertSame("54222", payroll.getTrainerID());
     }
 
     @Test
     @Disabled
     void createPayRollDisabled() {
-        PayRoll payroll = PayRollFactory.createPayRoll("525555", "54222", "5");
+        PayRoll payroll = PayRollFactory.createPayRoll(8000, "54222", "5");
         System.out.println(payroll);
         assertNotNull(payroll);
     }

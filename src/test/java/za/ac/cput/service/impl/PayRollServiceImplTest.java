@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class PayRollServiceImplTest {
     private static PayRollServiceImpl payRollService = (PayRollServiceImpl)  PayRollServiceImpl.getInstance();
-    private static PayRoll payRoll = PayRollFactory.createPayRoll("52545151","562621","2");
+    private static PayRoll payRoll = PayRollFactory.createPayRoll(8000,"562621","2");
 
     @Test
     void a_create() {
