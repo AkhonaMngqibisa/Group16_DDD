@@ -8,5 +8,10 @@ package za.ac.cput.service.impl;
 import za.ac.cput.entity.PayRoll;
 import za.ac.cput.service.IService;
 
+import java.util.Set;
+
 public interface PayRollService extends IService<PayRoll, Integer> {
+    boolean delete(String integer);
+
+    public Set<PayRoll> getAll();
 }
