@@ -36,7 +36,6 @@ public class MembershipRepository implements IMembershipRepository {
         boolean success = membershipSet.add(membership);
         if(!success)
             return null;
-
         return membership;
     }
 
@@ -44,7 +43,7 @@ public class MembershipRepository implements IMembershipRepository {
     public Membership read(Integer membershipId)
     {
         for(Membership m : membershipSet) {
-            if (m.getMembershipID() == membershipId) {
+            if (m.getID() == membershipId) {
                 return m;
             }
         }
@@ -54,7 +53,7 @@ public class MembershipRepository implements IMembershipRepository {
     @Override
     public Membership update(Membership membership)
     {
-        Membership _membership = read(membership.getMembershipID());
+        Membership _membership = read(membership.getID());
         if(_membership != null)
         {
             membershipSet.remove(_membership);

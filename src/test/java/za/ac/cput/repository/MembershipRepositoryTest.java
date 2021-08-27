@@ -24,13 +24,13 @@ class MembershipRepositoryTest {
     @Test
     void a_create() {
         Membership created = repository.create(membership);
-        assertEquals(created.getMembershipID(), membership.getMembershipID());
+        assertEquals(created.getID(), membership.getID());
         System.out.println("Create\n---\n" + created + "---");
     }
 
     @Test
     void b_read() {
-        Membership read = repository.read(membership.getMembershipID());
+        Membership read = repository.read(membership.getID());
         assertNotNull(read);
         System.out.println("\nRead\n---\n" + read + "---");
     }
@@ -51,7 +51,7 @@ class MembershipRepositoryTest {
 
     @Test
     void e_delete() {
-        boolean success = repository.delete(membership.getMembershipID());
+        boolean success = repository.delete(membership.getID());
         assertTrue(success);
         System.out.println("\nDelete: " + success);
     }

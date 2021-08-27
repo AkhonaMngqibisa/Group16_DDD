@@ -24,13 +24,13 @@ class MembershipServiceImplTest {
     @Test
     void a_create() {
         Membership created = membershipServiceImpl.create(membership);
-        assertEquals(created.getMembershipID(), membership.getMembershipID());
+        assertEquals(created.getID(), membership.getID());
         System.out.println("Created: " + created);
     }
 
     @Test
     void b_read() {
-        Membership read = membershipServiceImpl.read(membership.getMembershipID());
+        Membership read = membershipServiceImpl.read(membership.getID());
         assertNotNull(read);
         System.out.println("Read: " + read);
     }
@@ -49,7 +49,7 @@ class MembershipServiceImplTest {
 
     @Test
     void e_delete() {
-        boolean deleted = membershipServiceImpl.delete(membership.getMembershipID());
+        boolean deleted = membershipServiceImpl.delete(membership.getID());
         assertTrue(deleted);
         System.out.println("Delete: " + deleted);
     }
