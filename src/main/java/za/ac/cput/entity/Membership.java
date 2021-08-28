@@ -85,7 +85,7 @@ public class Membership {
 
     private Membership() {}
 
-    public int getMembershipID() {
+    public int getID() {
         return id;
     }
 
@@ -93,7 +93,7 @@ public class Membership {
         return memberID;
     }
 
-    public String getMembershipType() {
+    public String getType() {
         return type;
     }
 

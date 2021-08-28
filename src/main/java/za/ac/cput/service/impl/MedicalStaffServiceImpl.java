@@ -6,10 +6,12 @@
 
 package za.ac.cput.service.impl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.MedicalStaff;
 import za.ac.cput.repository.impl.MedicalStaffRepository;
 import java.util.Set;
 
+@Service
 public class MedicalStaffServiceImpl implements MedicalStaffService{
     private static MedicalStaffService medicalStaffService;
     private final MedicalStaffRepository medicalStaffRepository;
@@ -30,6 +32,7 @@ public class MedicalStaffServiceImpl implements MedicalStaffService{
 
     @Override
     public MedicalStaff create(MedicalStaff medicalStaff) {
+        System.out.println(medicalStaff);
         return medicalStaffRepository.create(medicalStaff);
     }
 

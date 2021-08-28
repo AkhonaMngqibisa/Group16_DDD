@@ -6,10 +6,12 @@
 
 package za.ac.cput.service.impl;
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Membership;
 import za.ac.cput.repository.impl.MembershipRepository;
 import java.util.Set;
 
+@Service
 public class MembershipServiceImpl implements MembershipService{
     private static MembershipService membershipService;
     private final MembershipRepository membershipRepository;
