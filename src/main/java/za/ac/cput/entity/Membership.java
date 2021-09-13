@@ -116,18 +116,16 @@ public class Membership {
         return totalFees;
     }
 
+    @Override
     public String toString() {
-//        return String.format(
-//                """
-//                        MEMBERSHIP
-//                        ID: %d
-//                        Member ID: %d
-//                        Type: %s
-//                        Total fees: %.2f
-//                        Expiry Date: %s
-//                        """,
-//            id, memberID, type, totalFees, expireDate.toString()
-//        );
-        return null;
+        return String.format(
+            "MEMBERSHIP\n" +
+            "ID: %d\n" +
+            "Member ID: %d\n" +
+            "Type: %s\n" +
+            "Total fees: %.2f\n" +
+            "Expiry Date: %s\n",
+            id, memberID, type, totalFees, expireDate.toString()
+        );
     }
 }

@@ -180,16 +180,13 @@ public class MedicalStaff {
 
     public String toString()
     {
-//        return String.format(
-//                """
-//                        Title: Medical staff
-//                        Name: %s %s
-//                        Phone Number: %s
-//                        Email: %s
-//                        """,
-//            firstName, lastName, phoneNumber, email
-//        );
-    return null;
+        return String.format(
+            "Medical staff\n" +
+            "Name: %s %s\n" +
+            "Phone Number: %s\n" +
+            "Email: %s\n",
+            firstName, lastName, phoneNumber, email
+        );
     }
 
     private String stringList(String s1, String s2) {
