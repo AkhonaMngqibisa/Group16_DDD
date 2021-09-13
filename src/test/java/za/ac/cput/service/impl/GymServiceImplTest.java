@@ -4,19 +4,22 @@ Service Test for the Gym
 Author: Akhona Mngqibisa (217302394)
 Date: 02 August 2021
 */
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.Gym;
-import za.ac.cput.entity.Package;
 import za.ac.cput.factory.GymFactory;
-import za.ac.cput.factory.PackageFactory;
-import za.ac.cput.repository.impl.GymRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
+@SpringBootTest
 class GymServiceImplTest {
-    private static GymServiceImpl gymSe = (GymServiceImpl) GymServiceImpl.getGymservice();
+    @Autowired
+    private static GymServiceImpl gymSe;
+
     private static Gym gym = GymFactory.createGym("W'outZone","125 Steve Biko Road, Gugulethu");
 
     @Test
@@ -27,6 +30,7 @@ class GymServiceImplTest {
     }
 
     @Test
+    @Disabled
     void b_read() {
         Gym read = gymSe.read(gym.getGymID());
         assertNotNull(read);
@@ -34,6 +38,7 @@ class GymServiceImplTest {
     }
 
     @Test
+    @Disabled
     void c_update() {
         Gym gym1 = new Gym.Builder().copy(gym).setGymName("Work-out Zone").build();
         gym1 = gymSe.update(gym1);
@@ -41,6 +46,7 @@ class GymServiceImplTest {
     }
 
     @Test
+    @Disabled
     void e_delete() {
         boolean deleteSuccessful = gymSe.delete(gym.getGymID());
         System.out.println("\nDeleted: ");
@@ -48,6 +54,7 @@ class GymServiceImplTest {
     }
 
     @Test
+    @Disabled
     void d_getAll() {
         System.out.println("\nDisplay All: " + gymSe.getAll());
     }

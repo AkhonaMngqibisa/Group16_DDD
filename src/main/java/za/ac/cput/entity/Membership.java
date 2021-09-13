@@ -117,16 +117,17 @@ public class Membership {
     }
 
     public String toString() {
-        return String.format(
-                """
-                        MEMBERSHIP
-                        ID: %d
-                        Member ID: %d
-                        Type: %s
-                        Total fees: %.2f
-                        Expiry Date: %s
-                        """,
-            id, memberID, type, totalFees, expireDate.toString()
-        );
+//        return String.format(
+//                """
+//                        MEMBERSHIP
+//                        ID: %d
+//                        Member ID: %d
+//                        Type: %s
+//                        Total fees: %.2f
+//                        Expiry Date: %s
+//                        """,
+//            id, memberID, type, totalFees, expireDate.toString()
+//        );
+        return null;
     }
 }

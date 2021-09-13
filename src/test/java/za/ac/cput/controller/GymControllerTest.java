@@ -1,5 +1,6 @@
 package za.ac.cput.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -45,6 +46,7 @@ class GymControllerTest {
     }
 
     @Test
+    @Disabled
     void c_update()
     {
        Gym updated = new Gym.Builder().copy(gym).setGymAddress("Ny5 No165 Gugulethu").build();
@@ -56,6 +58,7 @@ class GymControllerTest {
     }
 
     @Test
+    @Disabled
     void e_delete()
     {
         String url = baseURL+"/delete/"+gym.getGymID() ;
@@ -65,6 +68,7 @@ class GymControllerTest {
     }
 
     @Test
+    @Disabled
     void d_getAll()
     {
         String url = baseURL+"/getall";

@@ -1,5 +1,8 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,11 +11,15 @@ Entity for the Gym
 Author: Akhona Mngqibisa (217302394)
 Date: 09 June 2021
 */
+
+@Entity
+@Table(name="Gym")
 public class Gym
 {
+    @Id
     private int gymID;
+
     private String gymName, gymAddress;
-    List<Gym> gymList = new ArrayList<>();
 
 
     public Gym(Builder builder)
@@ -46,16 +53,6 @@ public class Gym
                 '}';
     }
 
-    //Searching for gym
-    public List<Gym> FindGym()
-    {
-        for(int i =0; i<51; i++)
-        {
-            Gym gym = new Gym(new Gym.Builder());
-            gymList.contains(gym);
-        }
-        return gymList;
-    }
 
     public static class Builder
     {

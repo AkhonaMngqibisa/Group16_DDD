@@ -1,5 +1,6 @@
 package za.ac.cput.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -46,6 +47,7 @@ private final String baseURL = "http://localhost:8080/member";
 }
 
 @Test
+@Disabled
     void c_update()
 {
     Member updated = new Member.Builder().copy(member).setLastName("Ndzoto").build();
@@ -57,6 +59,7 @@ private final String baseURL = "http://localhost:8080/member";
 }
 
 @Test
+@Disabled
     void e_delete()
 {
     String url = baseURL+"/delete/"+member.getMemberID() ;
@@ -66,6 +69,7 @@ private final String baseURL = "http://localhost:8080/member";
 }
 
 @Test
+@Disabled
     void d_getAll()
 {
     String url = baseURL+"/getall";

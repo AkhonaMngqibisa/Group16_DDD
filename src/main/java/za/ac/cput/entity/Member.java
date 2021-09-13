@@ -5,16 +5,21 @@ Author: Akhona Mngqibisa (217302394)
 Date: 09 June 2021
 */
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name="Member")
 public class Member
 {
+    @Id
     private int memberID;
     private String firstName, lastName, address, phoneNo, status;
     private int age;
     private String emailAddress,password;
-    List<Member> memberList = new ArrayList<>();
 
     //Constructor
     public Member(Builder builder)
@@ -82,7 +87,6 @@ public class Member
                 ", age=" + age +
                 ", emailAddress='" + emailAddress + '\'' +
                 ", password='" + password + '\'' +
-                ", memberList=" + memberList +
                 '}';
     }
 
@@ -91,35 +95,7 @@ public class Member
         System.out.println("Successfully login");
     }
 
-    public List<Member> AddMember()
-    {
 
-            Member member = new Member(new Builder());
-            memberList.add(member);
-
-
-        return memberList;
-    }
-
-    public List<Member> EditMember()
-    {
-        AddMember();
-        for(int i =0; i<1; i++)
-        {
-            Member member = new Member(new Builder());
-            memberList.contains(member);
-        }
-        return memberList;
-    }
-    public List<Member> DeleteMember()
-    {
-        AddMember();
-
-            Member member = new Member(new Builder());
-            memberList.remove(0);
-
-        return memberList;
-    }
 
     public static class Builder
     {
