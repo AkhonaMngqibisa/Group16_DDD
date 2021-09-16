@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.Disabled;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 import za.ac.cput.entity.Equipment;
@@ -49,6 +50,7 @@ class EquipmentControllerTest {
     }
 
     @Test
+    @Disabled
     void c_update()
     {
         Equipment updated = new Equipment.Builder().copy(equipment).setEqName("Skipping Rope").build();
@@ -60,6 +62,7 @@ class EquipmentControllerTest {
     }
 
     @Test
+    @Disabled
     void e_delete()
     {
         String url = baseURL+"/delete/"+equipment.getEqId() ;
@@ -69,6 +72,7 @@ class EquipmentControllerTest {
     }
 
     @Test
+    @Disabled
     void d_getAll()
     {
         String url = baseURL+"/getall";

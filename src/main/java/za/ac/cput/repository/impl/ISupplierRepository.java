@@ -6,12 +6,15 @@ Author: Lilitha Moni (219068429)
 Date: 22 July 2021
 */
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.entity.Supplier;
-import za.ac.cput.repository.IRepository;
 
-import java.util.Set;
 
-public interface ISupplierRepository extends IRepository<Supplier, Integer> {
-    public Set<Supplier> getAll();
+@Repository
+public interface ISupplierRepository extends JpaRepository<Supplier, Integer>
+{
+
+
 }
 
