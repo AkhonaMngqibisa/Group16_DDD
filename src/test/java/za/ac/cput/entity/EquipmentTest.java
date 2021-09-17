@@ -21,23 +21,6 @@ public class EquipmentTest {
 
             System.out.println(equipment);
 
-            assertEquals(50, equipment.AddEquipment().size());
         }
-
-        @Test
-        public void EditEquipmentTest()
-        {
-            Equipment equipment = new Equipment.Builder().build();
-            assertEquals(50, equipment.EditEquipment().size());
-        }
-
-        @Test
-        public void DeleteEquipmentTest()
-        {
-            Equipment equipment = new Equipment.Builder().build();
-            assertEquals(48, equipment.DeleteEquipment().size());
-
-        }
-
     }
 

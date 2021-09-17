@@ -1,9 +1,12 @@
 package za.ac.cput.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Equipment;
-import za.ac.cput.repository.impl.EquipmentRepository;
+import za.ac.cput.repository.impl.IEquipmentRepository;
+
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /*
 EquipmentServiceImpl.java
@@ -14,50 +17,42 @@ Date: 28 July 2021
 
 @Service
 public class EquipmentServiceImpl implements EquipmentService {
+    private static EquipmentService equipmentService= null;
 
-    private static EquipmentService SEquipment;
-    private EquipmentRepository equipmentRep;
-
-    public EquipmentServiceImpl(EquipmentRepository equipmentRep) {
-        this.equipmentRep = equipmentRep;
-    }
-
-    public EquipmentServiceImpl() {
-        this.equipmentRep = EquipmentRepository.getEquipmentRep();
-
-    }
-
-    public static EquipmentService getEquipmentService() {
-
-        if (SEquipment == null)
-            SEquipment = new EquipmentServiceImpl();
-        return SEquipment;
-    }
+    @Autowired
+    private IEquipmentRepository equipmentRepository;
 
     @Override
     public Equipment create(Equipment equipment) {
 
-        return this.equipmentRep.create(equipment);
+        return this.equipmentRepository.save(equipment);
     }
 
     @Override
-    public Equipment read(Integer equipmentID) {
-
-        return this.equipmentRep.read(equipmentID);
+    public Equipment read(Integer eqId) {
+        return this.equipmentRepository.findById(eqId).orElse(null);
     }
 
     @Override
     public Equipment update(Equipment equipment) {
-
-        return this.equipmentRep.update(equipment);
+        if(this.equipmentRepository.existsById(equipment.getEqId()))
+            return this.equipmentRepository.save(equipment);
+        return null;
     }
 
     @Override
-    public boolean delete(Integer equipmentID) {
+    public boolean delete(Integer eqId) {
+        this.equipmentRepository.deleteById(eqId);
+        if(this.equipmentRepository.existsById(eqId))
+            return false;
+        else
 
-        return this.delete(equipmentID);
+            return true;
     }
-    public Set<Equipment> getAll() {
-        return this.equipmentRep.getAll();
+
+    @Override
+    public Set<Equipment> getAll()
+    {
+        return this.equipmentRepository.findAll().stream().collect(Collectors.toSet());
     }
 }

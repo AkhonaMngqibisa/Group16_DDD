@@ -1,19 +1,23 @@
 package za.ac.cput.entity;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /* Equipment.java
 Entity for the Equipment
 Author: Lilitha Moni (219068429)
 Date: 10 June 2021
 */
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
 
+
+@Entity
+@Table(name="Equipment")
 public class Equipment {
-
+    @Id
     private int eqId;
     private String eqName, eqModel, eqInfo;
-    List<Equipment> equipmentList = new ArrayList<>();
+
 
     private Equipment(Builder builder) {
         this.eqId = builder.eqId;
@@ -23,6 +27,10 @@ public class Equipment {
 
 
     }
+
+    public Equipment() {
+    }
+
     public int getEqId() {
         return eqId;
     }
@@ -46,39 +54,9 @@ public class Equipment {
                 ", Name ='" + eqName + '\'' +
                 ", Model ='" + eqModel + '\'' +
                 ", Info ='" + eqInfo + '\'' +
-                ", Equipment List=" + equipmentList +
                 '}';
     }
 
-    public List<Equipment> AddEquipment()
-    {
-
-        Equipment equipment = new Equipment(new Equipment.Builder());
-        equipmentList.add(equipment);
-
-
-        return equipmentList;
-    }
-
-    public List<Equipment> EditEquipment()
-    {
-        AddEquipment();
-        for(int k = 0; k < 50; k++)
-        {
-            Equipment equipment = new Equipment(new Equipment.Builder());
-            equipmentList.contains(equipment);
-        }
-        return equipmentList;
-    }
-    public List<Equipment> DeleteEquipment()
-    {
-        AddEquipment();
-
-        Equipment equipment = new Equipment(new Equipment.Builder());
-        equipmentList.remove(2);
-
-        return equipmentList;
-    }
 
     public static class Builder {
         private int eqId;

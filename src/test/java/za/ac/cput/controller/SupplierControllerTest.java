@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.Disabled;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 import za.ac.cput.entity.Supplier;
@@ -49,6 +50,7 @@ class SupplierControllerTest {
     }
 
     @Test
+    @Disabled
     void c_update()
     {
         Supplier updated = new Supplier.Builder().copy(supplier).setSupName("Tyrese").build();
@@ -60,6 +62,7 @@ class SupplierControllerTest {
     }
 
     @Test
+    @Disabled
     void e_delete()
     {
         String url = baseURL+"/delete/"+supplier.getSupId() ;
@@ -69,6 +72,7 @@ class SupplierControllerTest {
     }
 
     @Test
+    @Disabled
     void d_getAll()
     {
         String url = baseURL+"/getall";

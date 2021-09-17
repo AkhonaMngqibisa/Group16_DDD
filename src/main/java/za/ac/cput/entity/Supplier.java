@@ -8,11 +8,20 @@ Date: 10 June 2021
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
 
+
+@Entity
+@Table(name="Supplier")
 public class Supplier {
-    private int supId, eqId;
+    @Id
+    private int supId;
+
+    private int eqId;
     private String supName;
-    List<Supplier> supplierList = new ArrayList<>();
+
 
     private Supplier(Builder builder) {
         this.supId = builder.supId;
@@ -20,6 +29,9 @@ public class Supplier {
         this.eqId = builder.eqId;
 
 
+    }
+
+    public Supplier() {
     }
 
     public int getSupId() {
@@ -40,30 +52,8 @@ public class Supplier {
                 "Supplier Id ='" + supId + '\'' +
                 ", Name ='" + supName + '\'' +
                 ", Equipment Id ='" + eqId + '\'' +
-                ", Supplier List=" + supplierList +
                 '}';
     }
-    public List<Supplier> AddSupplier()
-    {
-
-        Supplier supplier = new Supplier(new Supplier.Builder());
-        supplierList.add(supplier);
-
-
-        return supplierList;
-    }
-
-    public List<Supplier> EditSupplier()
-    {
-        AddSupplier();
-        for(int k = 0; k < 10; k++)
-        {
-            Supplier supplier = new Supplier(new Supplier.Builder());
-            supplierList.contains(supplier);
-        }
-        return supplierList;
-    }
-
 
     public static class Builder {
         private int supId,eqId;
