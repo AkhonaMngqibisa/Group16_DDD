@@ -8,7 +8,6 @@ package za.ac.cput.service.impl;
 
 import za.ac.cput.service.IService;
 import za.ac.cput.entity.Membership;
-
 import java.util.Set;
 
 public interface MembershipService extends IService<Membership, Integer> {

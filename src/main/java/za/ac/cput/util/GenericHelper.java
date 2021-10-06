@@ -11,17 +11,12 @@ public class GenericHelper
 {
     public static int generateId()
     {
-        return UUID.randomUUID().toString().hashCode();
+        return UUID.randomUUID().toString().hashCode() & 0xffffff;
     }
 
     public static boolean isEmpty(int i)
     {
-        if(i==0)
-
-            return true;
-
-        else
-            return false;
+        return i==0;
     }
 
 }

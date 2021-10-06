@@ -6,21 +6,34 @@
 
 package za.ac.cput.entity;
 
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Calendar;
 
+@Entity
+@Table(name="membership")
 public class Membership {
+    @Id
+    private int id;
+
+    @OneToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="member_id")
+    private Member member;
+
+    private String type;
+    private double totalFees;
+    private Date expireDate;
 
     public static class Builder {
         private int id;
-        private int memberID;
+        private Member member;
         private String type;
         private double totalFees;
         private Date expireDate;
 
         public Builder(Membership membership) {
             this.id = membership.id;
-            this.memberID = membership.memberID;
+            this.member = membership.member;
             this.type = membership.type;
             this.totalFees = membership.totalFees;
             this.expireDate = membership.expireDate;
@@ -30,9 +43,9 @@ public class Membership {
             this.id = id;
         }
 
-        public Builder addMember(int memberID)
+        public Builder addMember(Member member)
         {
-            this.memberID = memberID;
+            this.member = member;
 
             return this;
         }
@@ -55,7 +68,7 @@ public class Membership {
         {
             Membership m = new Membership();
             m.id = this.id;
-            m.memberID = this.memberID;
+            m.member = this.member;
             m.type = this.type;
             m.totalFees = this.totalFees;
             Date now = new Date();
@@ -68,7 +81,7 @@ public class Membership {
 
         public Builder copy(Membership membership) {
             this.id = membership.id;
-            this.memberID = membership.memberID;
+            this.member = membership.member;
             this.type = membership.type;
             this.totalFees = membership.totalFees;
             this.expireDate = membership.expireDate;
@@ -77,32 +90,42 @@ public class Membership {
         }
     }
 
-    private int id;
-    private int memberID;
-    private String type;
-    private double totalFees;
-    private Date expireDate;
-
-    private Membership() {}
+    public Membership() {}
 
     public int getID() {
         return id;
     }
 
-    public int getMemberID() {
-        return memberID;
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
     }
 
     public String getType() {
         return type;
     }
 
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public double getTotalFees() {
         return totalFees;
     }
 
+    public void setTotalFees(double totalFees) {
+        this.totalFees = totalFees;
+    }
+
     public Date getExpireDate() {
         return expireDate;
+    }
+
+    public void setExpireDate(Date expireDate) {
+        this.expireDate = expireDate;
     }
 
     public double calculateTotalRenewal()
@@ -125,7 +148,7 @@ public class Membership {
             "Type: %s\n" +
             "Total fees: %.2f\n" +
             "Expiry Date: %s\n",
-            id, memberID, type, totalFees, expireDate.toString()
+            id, member.getMemberID(), type, totalFees, expireDate.toString()
         );
     }
 }

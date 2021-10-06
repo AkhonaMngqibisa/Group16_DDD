@@ -7,6 +7,7 @@
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.Test;
+import za.ac.cput.entity.Member;
 import za.ac.cput.entity.Membership;
 
 class MembershipFactoryTest {
@@ -14,7 +15,10 @@ class MembershipFactoryTest {
     @Test
     void createMembership() {
         Membership membership = MembershipFactory.createMembership(
-                12, "Gold", 300.00);
+            new Member.Builder().setFirstName("Ariana").setLastName("Grande").build(),
+            "Gold",
+            300.00
+        );
         System.out.println(membership);
     }
 }

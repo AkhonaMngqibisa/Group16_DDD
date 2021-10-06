@@ -7,14 +7,19 @@
 package za.ac.cput.service.impl;
 
 import org.junit.jupiter.api.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.MedicalStaff;
 import za.ac.cput.factory.MedicalStaffFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
+@SpringBootTest
 class MedicalStaffServiceImplTest {
-    public static MedicalStaffServiceImpl medicalStaffServiceImpl = (MedicalStaffServiceImpl) MedicalStaffServiceImpl.getInstance();
+    @Autowired
+    public MedicalStaffServiceImpl medicalStaffServiceImpl;
+
     public static MedicalStaff medicalStaff = MedicalStaffFactory.createMedicalStaff(
             "Jack",
             "Frost",
@@ -51,7 +56,7 @@ class MedicalStaffServiceImplTest {
     @Test
     void e_delete() {
         boolean deleted = medicalStaffServiceImpl.delete(medicalStaff.getId());
-        assertTrue(deleted);
         System.out.println("Delete: " + deleted);
+        assertTrue(deleted);
     }
 }
