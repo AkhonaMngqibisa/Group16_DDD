@@ -6,7 +6,23 @@
 
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="medical_staff")
 public class MedicalStaff {
+
+    @Id
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
+    private String email;
+    private int checkupsDone;
+    private int fitnessTestsDone;
+    private int medicalEmergenciesDone;
 
     public static class Builder {
         private int mediStaffID;
@@ -70,15 +86,6 @@ public class MedicalStaff {
         }
     }
 
-    private int id;
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
-    private String email;
-    private int checkupsDone;
-    private int fitnessTestsDone;
-    private int medicalEmergenciesDone;
-
     public MedicalStaff() {}
 
     public int getId() {
@@ -89,8 +96,16 @@ public class MedicalStaff {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getLastName() {
         return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPhoneNumber() {

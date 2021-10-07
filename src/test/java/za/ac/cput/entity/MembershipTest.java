@@ -16,7 +16,7 @@ class MembershipTest {
     @BeforeEach
     void setUp() {
         m = new Membership.Builder(17)
-            .addMember(22)
+            .addMember(new Member.Builder().setFirstName("Ariana").setLastName("Grande").build())
             .setType("Gold")
             .setTotalFees(100.00)
             .build();

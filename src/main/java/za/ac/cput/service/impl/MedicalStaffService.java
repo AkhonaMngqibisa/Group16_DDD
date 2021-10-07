@@ -8,7 +8,6 @@ package za.ac.cput.service.impl;
 
 import za.ac.cput.service.IService;
 import za.ac.cput.entity.MedicalStaff;
-
 import java.util.Set;
 
 public interface MedicalStaffService extends IService<MedicalStaff, Integer> {

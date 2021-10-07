@@ -7,9 +7,13 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import za.ac.cput.entity.Member;
 import za.ac.cput.entity.Membership;
 import za.ac.cput.factory.MembershipFactory;
+import za.ac.cput.service.impl.MemberService;
 import za.ac.cput.service.impl.MembershipService;
 
 import java.util.Set;
@@ -21,16 +25,32 @@ public class MembershipController {
     @Autowired
     private MembershipService membershipService;
 
+    @Autowired
+    private MemberService memberService;
+
     @PostMapping("/create")
-    public Membership create(@RequestBody Membership membership)
+    public ResponseEntity<Membership> create(@RequestBody Membership membership)
     {
+        System.out.println(membership.getMember());
+        Member member = memberService.read(membership.getMember().getMemberID());
+        System.out.println(member);
+
+        if (member == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        System.out.println(member);
         Membership newMembership =
                 MembershipFactory.createMembership(
-                        membership.getMemberID(),
+                        member,
                         membership.getType(),
                         membership.getTotalFees()
                     );
-        return membershipService.create(newMembership);
+        System.out.println("Got new membership");
+        System.out.println(newMembership);
+        Membership ret = membershipService.create(newMembership);
+        System.out.println("Completed");
+        System.out.println(ret);
+        return new ResponseEntity<>(ret, HttpStatus.OK);
     }
 
     @GetMapping("/read/{id}")

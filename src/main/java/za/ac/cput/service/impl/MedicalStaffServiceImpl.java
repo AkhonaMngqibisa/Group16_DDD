@@ -6,52 +6,45 @@
 
 package za.ac.cput.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.MedicalStaff;
-import za.ac.cput.repository.impl.MedicalStaffRepository;
+import za.ac.cput.repository.impl.IMedicalStaffRepository;
+
+import java.util.HashSet;
 import java.util.Set;
 
 @Service
 public class MedicalStaffServiceImpl implements MedicalStaffService{
-    private static MedicalStaffService medicalStaffService;
-    private final MedicalStaffRepository medicalStaffRepository;
+//    private static MedicalStaffService medicalStaffService = null;
 
-    public MedicalStaffServiceImpl() {
-        this.medicalStaffRepository = MedicalStaffRepository.getRepository();
-    }
-
-    public MedicalStaffServiceImpl(MedicalStaffRepository medicalStaffRepository) {
-        this.medicalStaffRepository = medicalStaffRepository;
-    }
-
-    public static MedicalStaffService getInstance() {
-        if(medicalStaffService== null)
-            medicalStaffService = new MedicalStaffServiceImpl();
-        return medicalStaffService;
-    }
+    @Autowired
+    private IMedicalStaffRepository medicalStaffRepository;
 
     @Override
     public MedicalStaff create(MedicalStaff medicalStaff) {
-        System.out.println(medicalStaff);
-        return medicalStaffRepository.create(medicalStaff);
+        return medicalStaffRepository.save(medicalStaff);
     }
 
     @Override
-    public MedicalStaff read(Integer integer) {
-        return medicalStaffRepository.read(integer);
+    public MedicalStaff read(Integer medicalStaffId) {
+        return medicalStaffRepository.findById(medicalStaffId).orElse(null);
     }
 
     @Override
     public MedicalStaff update(MedicalStaff medicalStaff) {
-        return medicalStaffRepository.update(medicalStaff);
+        if (medicalStaffRepository.existsById(medicalStaff.getId()))
+            return medicalStaffRepository.save(medicalStaff);
+        return null;
     }
 
     @Override
-    public boolean delete(Integer integer) {
-        return medicalStaffRepository.delete(integer);
+    public boolean delete(Integer medicalStaffId) {
+        medicalStaffRepository.deleteById(medicalStaffId);
+        return !medicalStaffRepository.existsById(medicalStaffId);
     }
 
     public Set<MedicalStaff> getAll() {
-        return medicalStaffRepository.getAll();
+        return new HashSet<>(medicalStaffRepository.findAll());
     }
 }

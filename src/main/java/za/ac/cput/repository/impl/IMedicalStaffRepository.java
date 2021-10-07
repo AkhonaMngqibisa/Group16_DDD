@@ -6,11 +6,11 @@
 
 package za.ac.cput.repository.impl;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.entity.MedicalStaff;
-import za.ac.cput.repository.IRepository;
 
-import java.util.Set;
-
-public interface IMedicalStaffRepository extends IRepository<MedicalStaff, Integer> {
-    Set<MedicalStaff> getAll();
+@Repository
+public interface IMedicalStaffRepository
+        extends JpaRepository<MedicalStaff, Integer> {
 }

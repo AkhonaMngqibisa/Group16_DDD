@@ -7,6 +7,7 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.MedicalStaff;
 import za.ac.cput.factory.MedicalStaffFactory;
@@ -20,8 +21,21 @@ public class MedicalStaffController {
     @Autowired
     private MedicalStaffService medicalStaffService;
 
-    @PostMapping("/create")
-    public MedicalStaff create(@RequestBody MedicalStaff medicalStaff)
+    @PostMapping(value="/create", consumes= MediaType.APPLICATION_JSON_VALUE)
+    public MedicalStaff create_application_json(@RequestBody MedicalStaff medicalStaff)
+    {
+        MedicalStaff newMedicalStaff =
+                MedicalStaffFactory.createMedicalStaff(
+                        medicalStaff.getFirstName(),
+                        medicalStaff.getLastName(),
+                        medicalStaff.getEmail(),
+                        medicalStaff.getPhoneNumber()
+                        );
+        return medicalStaffService.create(newMedicalStaff);
+    }
+
+    @PostMapping(value="/create", consumes=MediaType.MULTIPART_FORM_DATA_VALUE)
+    public MedicalStaff create_multipart_form_data(@ModelAttribute("medicalStaff") MedicalStaff medicalStaff)
     {
         MedicalStaff newMedicalStaff =
                 MedicalStaffFactory.createMedicalStaff(

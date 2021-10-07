@@ -5,17 +5,18 @@
  */
 
 package za.ac.cput.factory;
+import za.ac.cput.entity.Member;
 import za.ac.cput.entity.Membership;
 import za.ac.cput.util.GenericHelper;
 
 public class MembershipFactory
 {
-    public static Membership createMembership(int memberID, String type, double totalFees)
+    public static Membership createMembership(Member member, String type, double totalFees)
     {
         int membershipID = GenericHelper.generateId();
 
         return new Membership.Builder(membershipID)
-                .addMember(memberID)
+                .addMember(member)
                 .setType(type)
                 .setTotalFees(totalFees)
                 .build();

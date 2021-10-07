@@ -37,7 +37,7 @@ class MembershipControllerTest {
             "*****"
     );
     private static Membership membership = MembershipFactory.createMembership(
-            member.getMemberID(),
+            member,
             "silver",
             100.00
     );
