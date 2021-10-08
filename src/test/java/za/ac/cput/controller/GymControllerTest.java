@@ -18,6 +18,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class GymControllerTest {
 
     private static Gym gym = GymFactory.createGym("BabZone","Ny1 No135 Gugulethu");
+    public static  String SECURITY_USERNAME = "user";
+    public static  String SECURITY_PASSWORD = "password";
 
     @Autowired
     private TestRestTemplate restTemplate;
@@ -74,7 +76,7 @@ class GymControllerTest {
         String url = baseURL+"/getall";
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity =  new HttpEntity<>(null,headers);
-        ResponseEntity<String> repsonse = restTemplate.exchange(url, HttpMethod.GET,entity, String.class);
+        ResponseEntity<String> repsonse = restTemplate.withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD).exchange(url, HttpMethod.GET,entity, String.class);
         System.out.println("Gym");
         System.out.println(repsonse);
         System.out.println(repsonse.getBody());

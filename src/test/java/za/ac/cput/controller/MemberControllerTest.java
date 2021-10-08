@@ -20,9 +20,13 @@ class MemberControllerTest {
 
 private static Member member = MemberFactory.createMember("Akhona","Mngqibisa","Ny1 No135 Gugulethu","0621982196",22,"Active","amngq@gmail.com","12345");
 
+    public static  String SECURITY_USERNAME = "user";
+    public static  String SECURITY_PASSWORD = "password";
+
 @Autowired
 private TestRestTemplate restTemplate;
 private final String baseURL = "http://localhost:8080/member";
+
 
 @Test
     void a_create()
@@ -75,7 +79,7 @@ private final String baseURL = "http://localhost:8080/member";
     String url = baseURL+"/getall";
     HttpHeaders headers = new HttpHeaders();
     HttpEntity<String> entity =  new HttpEntity<>(null,headers);
-    ResponseEntity<String> repsonse = restTemplate.exchange(url, HttpMethod.GET,entity, String.class);
+    ResponseEntity<String> repsonse = restTemplate.withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD).exchange(url, HttpMethod.GET,entity, String.class);
     System.out.println("ALL MEMBERS");
     System.out.println(repsonse);
     System.out.println(repsonse.getBody());
