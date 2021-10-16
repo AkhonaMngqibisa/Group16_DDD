@@ -21,14 +21,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         System.out.println("SECURITY!!!");
         http
                 .authorizeRequests()
-                    //.antMatchers("/", "/home").permitAll()
-                    //.antMatcher("**/getall").authenticationProvider(AuthenticationProvider.).hasAnyRole("ADMIN", "MEMBER")
-                    .antMatchers(HttpMethod.GET, "**/getall").hasRole("ADMIN")
+                //.antMatchers("/", "/home").permitAll()
+                //.antMatcher("**/getall").authenticationProvider(AuthenticationProvider.).hasAnyRole("ADMIN", "MEMBER")
+                .antMatchers(HttpMethod.GET, "**/getall").hasRole("ADMIN")
 //                    .antMatchers(HttpMethod.POST, "**/create", "**/update").hasRole("ADMIN")
 //                    .antMatchers(HttpMethod.POST, "**/create", "**/update").authenticated()
 //                    .antMatchers(HttpMethod.DELETE, "**/delete/**").hasRole("ADMIN")
 //                    .antMatchers(HttpMethod.DELETE, "**/delete/**").authenticated()
-                    .anyRequest().authenticated()
+                .anyRequest().authenticated()
                 .and()
                 .csrf().disable()
                 .httpBasic();
