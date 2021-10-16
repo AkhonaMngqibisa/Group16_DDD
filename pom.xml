@@ -38,7 +38,6 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
-<<<<<<< HEAD
       <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
 
@@ -50,8 +49,6 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
-=======
->>>>>>> parent of a51cc1d (Added Security)
       <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
 
