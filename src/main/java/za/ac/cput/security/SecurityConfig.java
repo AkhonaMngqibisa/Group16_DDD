@@ -13,31 +13,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-       http.httpBasic()
-               .and()
-               .authorizeRequests()
-               .antMatchers(HttpMethod.POST, "**/create").hasRole("ADMIN")
-               .antMatchers(HttpMethod.POST, "**/update").hasRole("ADMIN")
-               .antMatchers(HttpMethod.GET, "**/getall").hasRole("ADMIN")
-               .antMatchers(HttpMethod.GET, "**/getall").hasRole("MEMBER")
+        http.httpBasic()
                 .and()
-               .csrf().disable()
-               .formLogin().disable();
+                .authorizeRequests()
+                .antMatchers(HttpMethod.GET, "/**/getall").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/**/create", "/**/update").hasRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/**/delete/*").hasRole("ADMIN")
+                .and()
+                .csrf().disable()
+                .formLogin().disable();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-       auth.inMemoryAuthentication()
-               .withUser("Admin")
-               .password("{noop}admin123")
-               .roles("ADMIN")
-               .and()
-               .withUser("trainer")
-               .password("{noop}trainer123")
-               .roles("USER")
-               .and()
-               .withUser("member")
-               .password("{noop}member123")
-               .roles("USER");
+        auth.inMemoryAuthentication()
+                .withUser("Admin")
+                .password("{noop}admin123")
+                .roles("ADMIN")
+                .and()
+                .withUser("trainer")
+                .password("{noop}trainer123")
+                .roles("TRAINER")
+                .and()
+                .withUser("member")
+                .password("{noop}member123")
+                .roles("USER");
     }
 }

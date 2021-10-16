@@ -8,10 +8,15 @@ package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.MedicalStaff;
 import za.ac.cput.factory.MedicalStaffFactory;
 import za.ac.cput.service.impl.MedicalStaffService;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.Set;
 
 @RestController
@@ -22,8 +27,7 @@ public class MedicalStaffController {
     private MedicalStaffService medicalStaffService;
 
     @PostMapping(value="/create", consumes= MediaType.APPLICATION_JSON_VALUE)
-    public MedicalStaff create_application_json(@RequestBody MedicalStaff medicalStaff)
-    {
+    public MedicalStaff create_application_json(@RequestBody MedicalStaff medicalStaff) {
         MedicalStaff newMedicalStaff =
                 MedicalStaffFactory.createMedicalStaff(
                         medicalStaff.getFirstName(),
@@ -35,8 +39,7 @@ public class MedicalStaffController {
     }
 
     @PostMapping(value="/create", consumes=MediaType.MULTIPART_FORM_DATA_VALUE)
-    public MedicalStaff create_multipart_form_data(@ModelAttribute("medicalStaff") MedicalStaff medicalStaff)
-    {
+    public MedicalStaff create_multipart_form_data(@ModelAttribute("medicalStaff") MedicalStaff medicalStaff) {
         MedicalStaff newMedicalStaff =
                 MedicalStaffFactory.createMedicalStaff(
                         medicalStaff.getFirstName(),
@@ -48,27 +51,22 @@ public class MedicalStaffController {
     }
 
     @GetMapping("/read/{id}")
-    public MedicalStaff read(@PathVariable int id)
-    {
+    public MedicalStaff read(@PathVariable int id) {
         return medicalStaffService.read(id);
     }
 
     @PostMapping("/update")
-    public MedicalStaff update(@RequestBody MedicalStaff medicalStaff)
-    {
+    public MedicalStaff update(@RequestBody MedicalStaff medicalStaff) {
         return medicalStaffService.update(medicalStaff);
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@PathVariable int id)
-    {
-        System.out.println("DELETE");
+    public boolean delete(@PathVariable int id) {
         return medicalStaffService.delete(id);
     }
 
     @GetMapping("/getall")
-    public Set<MedicalStaff> getAll()
-    {
+    public Set<MedicalStaff> getAll() {
         return medicalStaffService.getAll();
     }
 

@@ -31,25 +31,18 @@ public class MembershipController {
     @PostMapping("/create")
     public ResponseEntity<Membership> create(@RequestBody Membership membership)
     {
-        System.out.println(membership.getMember());
         Member member = memberService.read(membership.getMember().getMemberID());
-        System.out.println(member);
 
         if (member == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        System.out.println(member);
         Membership newMembership =
                 MembershipFactory.createMembership(
                         member,
                         membership.getType(),
                         membership.getTotalFees()
                     );
-        System.out.println("Got new membership");
-        System.out.println(newMembership);
         Membership ret = membershipService.create(newMembership);
-        System.out.println("Completed");
-        System.out.println(ret);
         return new ResponseEntity<>(ret, HttpStatus.OK);
     }
 

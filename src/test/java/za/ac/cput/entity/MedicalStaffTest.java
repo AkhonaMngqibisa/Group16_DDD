@@ -32,9 +32,13 @@ class MedicalStaffTest {
     }
 
     @Test
-    void checkup() {
+    void checkupTest() {
         System.out.println(ms.checkup(m, 70, 23.7, "No comment"));
         assertEquals(1, ms.getCheckupsDone());
+        System.out.println(ms.checkup(m, 200, 23.7, "No comment"));
+        assertEquals(2, ms.getCheckupsDone());
+        System.out.println(ms.checkup(m, 70, 13.7, "No comment"));
+        assertEquals(3, ms.getCheckupsDone());
     }
 
     @Test

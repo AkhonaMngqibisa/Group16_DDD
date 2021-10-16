@@ -9,9 +9,10 @@ package za.ac.cput.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.function.BiFunction;
 
 @Entity
-@Table(name="medical_staff")
+@Table(name="medicalstaff")
 public class MedicalStaff {
 
     @Id
@@ -136,8 +137,12 @@ public class MedicalStaff {
         return medicalEmergenciesDone;
     }
 
-    public String checkup(Member member, double heartRate, double BMI, String comment)
-    {
+    public String checkup(Member member, double heartRate, double BMI, String comment) {
+        BiFunction<String, String, String> stringList = (s1, s2) -> {
+            if(s1.equals("")) return s2;
+            return s1 + ", " +s2;
+        };
+
         double BMILow = 18.5;
         double BMIHigh = 24.9;
         double HRLow = 60;
@@ -156,45 +161,41 @@ public class MedicalStaff {
             return String.format("%S is healthy.", member.getFirstName());
 
         if(BMI < BMILow) {
-            recommendedExercises += stringList(recommendedExercises, "push-ups, pull-ups, squats, lunges");
-            recommendedDiet += stringList(recommendedDiet, "eggs, nuts, red meat, full-fat dairy");
+            recommendedExercises += stringList.apply(recommendedExercises, "push-ups, pull-ups, squats, lunges");
+            recommendedDiet += stringList.apply(recommendedDiet, "eggs, nuts, red meat, full-fat dairy");
         } else if(BMI > BMIHigh) {
-            recommendedExercises += stringList(recommendedExercises, "walking, biking, swimming");
-            recommendedDiet += stringList(recommendedDiet, "fruits, vegetables, high fibre meals");
+            recommendedExercises += stringList.apply(recommendedExercises, "walking, biking, swimming");
+            recommendedDiet += stringList.apply(recommendedDiet, "fruits, vegetables, high fibre meals");
         }
 
         if(heartRate < HRLow)
         {
-            recommendedExercises += stringList(recommendedExercises, "tennis, jumping rope");
-            recommendedDiet += stringList(recommendedDiet, "fish, grains, legumes, vitamin A");
+            recommendedExercises += stringList.apply(recommendedExercises, "tennis, jumping rope");
+            recommendedDiet += stringList.apply(recommendedDiet, "fish, grains, legumes, vitamin A");
         } else if(heartRate > HRHigh)
         {
-            recommendedExercises += stringList(recommendedExercises, "meditation, yoga, stretches");
-            recommendedDiet += stringList(recommendedDiet, "water, reduce caffeine intake, reduce alcohol intake");
+            recommendedExercises += stringList.apply(recommendedExercises, "meditation, yoga, stretches");
+            recommendedDiet += stringList.apply(recommendedDiet, "water, reduce caffeine intake, reduce alcohol intake");
         }
         return String.format("Recommendations for %S %S:\nExercise: %s\nDiet: %s", member.getFirstName(), member.getLastName(), recommendedExercises, recommendedDiet);
     }
 
-    public boolean fitnessTest(Member member, int pacer, double mileRun, int pushUps)
-    {
+    public boolean fitnessTest(Member member, int pacer, double mileRun, int pushUps) {
         fitnessTestsDone += 1;
         return !(pacer < 54 || mileRun > 8.05 || pushUps < 18);
     }
 
-    public String medicalEmergency(Member member, String comment)
-    {
+    public String medicalEmergency(Member member, String comment) {
         medicalEmergenciesDone += 1;
         return String.format("MEDICAL EMERGENCY:\nMEMBER: %S %S\nDESCRIPTION: %s", member.getFirstName(), member.getLastName(), comment);
     }
 
-    public String medicalEmergency(String comment)
-    {
+    public String medicalEmergency(String comment) {
         medicalEmergenciesDone += 1;
         return String.format("MEDICAL EMERGENCY:\nNON-MEMBER\nDESCRIPTION: %s", comment);
     }
 
-    public String toString()
-    {
+    public String toString() {
         return String.format(
             "Medical staff\n" +
             "Name: %s %s\n" +
@@ -202,10 +203,5 @@ public class MedicalStaff {
             "Email: %s\n",
             firstName, lastName, phoneNumber, email
         );
-    }
-
-    private String stringList(String s1, String s2) {
-        if(s1.equals("")) return s2;
-        return s1 + ", " +s2;
     }
 }
