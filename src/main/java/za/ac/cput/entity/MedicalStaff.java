@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import java.util.function.BiFunction;
 
 @Entity
-@Table(name="medical_staff")
+@Table(name="medicalstaff")
 public class MedicalStaff {
 
     @Id

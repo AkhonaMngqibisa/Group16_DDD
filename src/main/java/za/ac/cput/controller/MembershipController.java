@@ -9,13 +9,6 @@ package za.ac.cput.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.authentication.AnonymousAuthenticationToken;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Member;
 import za.ac.cput.entity.Membership;
@@ -23,12 +16,10 @@ import za.ac.cput.factory.MembershipFactory;
 import za.ac.cput.service.impl.MemberService;
 import za.ac.cput.service.impl.MembershipService;
 
-import java.security.Principal;
 import java.util.Set;
 
 @RestController
 @RequestMapping("/membership")
-@EnableWebSecurity
 public class MembershipController {
     
     @Autowired
@@ -37,16 +28,9 @@ public class MembershipController {
     @Autowired
     private MemberService memberService;
 
-//    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<Membership> create(@RequestBody Membership membership)
     {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if(!(auth instanceof AnonymousAuthenticationToken) && auth != null)
-            System.out.println(auth.getName());
-        else
-            System.out.println("No Auth!");
-
         Member member = memberService.read(membership.getMember().getMemberID());
 
         if (member == null)
