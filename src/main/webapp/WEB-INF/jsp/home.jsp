@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
     <style>
         * {
             margin: 0;
@@ -78,7 +78,7 @@
                 <li><a href="${pageContext.request.contextPath}/services">Services</a></li>
                 <li><a href="${pageContext.request.contextPath}/about">About</a></li>
                 <li><a href="${pageContext.request.contextPath}/contact">Contact</a></li>
-                <li><a href="${pageContext.request.contextPath}/log-in">Log In</a></li>
+                <li><a href="login.jsp">Log In</a></li>
             </ul>
         </nav>
     </header>

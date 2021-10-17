@@ -1,6 +1,7 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Member;
 import za.ac.cput.factory.MemberFactory;
@@ -14,7 +15,7 @@ Author: Akhona Mngqibisa (217302394)
 Date:15 August 2021
 */
 
-@RestController
+@Controller
 @RequestMapping("/member")
 public class MemberController {
 

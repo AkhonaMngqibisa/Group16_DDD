@@ -9,6 +9,7 @@ package za.ac.cput.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Member;
 import za.ac.cput.entity.Membership;
@@ -18,7 +19,7 @@ import za.ac.cput.service.impl.MembershipService;
 
 import java.util.Set;
 
-@RestController
+@Controller
 @RequestMapping("/membership")
 public class MembershipController {
     

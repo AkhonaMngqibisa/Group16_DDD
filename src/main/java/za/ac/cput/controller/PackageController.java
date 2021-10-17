@@ -1,6 +1,7 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Package;
 import za.ac.cput.factory.PackageFactory;
@@ -8,7 +9,7 @@ import za.ac.cput.service.impl.IPackageService;
 
 import java.util.Set;
 
-@RestController
+@Controller
 @RequestMapping("/package")
 public class PackageController {
     @Autowired
