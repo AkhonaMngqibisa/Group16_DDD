@@ -7,8 +7,24 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController
 {
     @RequestMapping({"/", "/home"})
-    String home() {
+    String home()
+    {
 
         return "home";
     }
+    @RequestMapping({"/", "/dashboard"})
+    String dashboard()
+    {
+
+        return "dashboard";
+    }
+
+
+    @RequestMapping({"/", "/login"})
+    String login()
+    {
+
+        return "login";
+    }
+
 }

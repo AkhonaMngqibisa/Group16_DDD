@@ -70,7 +70,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="../img/logo.jpg" alt="">
+            <img src="../../resources/img/logo.jpg" alt="">
         </div>
         <nav>
             <ul>
@@ -83,7 +83,7 @@
         </nav>
     </header>
     <div class="main-img">
-        <img src="../img/gym.png" alt="">
+        <img src="../../resources/img/gym.png" alt="">
     </div>
     <div class="about content">
         <h2>About</h2>
