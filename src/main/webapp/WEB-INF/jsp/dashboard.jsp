@@ -22,13 +22,13 @@
         <li><a href="#" class="active"><i class='home'><img
                 src="../resources/img/dashboard/home_icon.png"> </i><span class="links_name">Home</span></a></li>
 
-        <li><a href="#"> <i class='member'><img
+        <li><a href="/member/getall"> <i class='member'><img
                 src="../resources/img/dashboard/member_icon.png"></i> <span class="links_name">Members</span></a></li>
 
-        <li><a href="ReadTaskList.jsp"> <i class='trainer'><img
+        <li><a href="/trainer/getall"> <i class='trainer'><img
                 src="../resources/img/dashboard/trainer_icon.png"></i> <span class="links_name">Trainers</span></a></li>
 
-        <li><a href="#"> <i class='schedule'><img
+        <li><a href="/schedule/getall"> <i class='schedule'><img
                 src="../resources/img/dashboard/calendar_icon.png"></i> <span class="links_name">Schedule</span></a></li>
 
         <li><a href="#"> <i class='plans'><img
@@ -44,7 +44,7 @@
         <li><a href="#"> <i class='medicals'><img
                 src="../resources/img/dashboard/medicals_icon.png"></i> <span class="links_name">Medical Staff</span></a></li>
 
-        <li class="sign_out"><a href="#"> <i class='signout'><img
+        <li class="sign_out"><a href="/logout"> <i class='signout'><img
                 src="../resources/img/dashboard/signout_icon.png"></i><span class="links_name">Sign
 						out</span></a></li>
     </ul>
