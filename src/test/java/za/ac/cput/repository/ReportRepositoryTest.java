@@ -10,11 +10,10 @@ import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Report;
 import za.ac.cput.factory.ReportFactory;
 import za.ac.cput.repository.impl.IReportRepository;
-import za.ac.cput.repository.impl.ReportRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ReportRepositoryTest {
+/*public class ReportRepositoryTest {
     private static IReportRepository reportRepository = ReportRepository.geReportRepository();
     private static Report report = ReportFactory.createReport(022,
             0021,
@@ -59,4 +58,4 @@ public class ReportRepositoryTest {
     public void getAll() {
         System.out.println("\nDisplay All: " + reportRepository.getAll());
     }
-}
+ */

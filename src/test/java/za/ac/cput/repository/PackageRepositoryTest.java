@@ -10,11 +10,10 @@ import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Package;
 import za.ac.cput.factory.PackageFactory;
 import za.ac.cput.repository.impl.IPackageRepository;
-import za.ac.cput.repository.impl.PackageRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PackageRepositoryTest {
+/*public class PackageRepositoryTest {
     private static IPackageRepository packageRepository = PackageRepository.getPackageRepository();
     private static Package aPackage = PackageFactory.createPackage(015, 025,
             8, 350.00,
@@ -58,4 +57,5 @@ public class PackageRepositoryTest {
        // assertEquals(1,packageRepository.getAll().size());
         System.out.println("\nDisplay All: " + packageRepository.getAll());
     }
-}
+
+ */
