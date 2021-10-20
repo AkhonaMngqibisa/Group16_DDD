@@ -29,6 +29,10 @@ private int ID;
         this.emailAddress = builder.emailAddress;
     }
 
+    public Admin() {
+
+    }
+
     public String getFisrtName() {
         return fisrtName;
     }

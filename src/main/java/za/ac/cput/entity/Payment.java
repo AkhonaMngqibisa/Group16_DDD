@@ -27,6 +27,9 @@ private String paymentDate;
         this.paymentDate = builder.paymentDate;
     }
 
+    public Payment() {
+    }
+
     public int getPaymentID() {
         return paymentID;
     }
