@@ -1,9 +1,10 @@
 package za.ac.cput.entity;
 
-import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
+import java.util.Objects;
 
 /**
  Package.java
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Package")
-public class Package {
+public class Package implements Serializable {
 
     @Id
 
@@ -144,6 +145,7 @@ public class Package {
         public int hashCode() {
             return Objects.hash(packageID);
         }
+
     }
 }
 

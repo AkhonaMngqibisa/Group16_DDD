@@ -9,7 +9,7 @@ Date: 09 June 2021
 import za.ac.cput.entity.Admin;
 import java.util.HashSet;
 import java.util.Set;
-
+/*
 public class AdminRespository implements IAdminRespository {
 
     private static AdminRespository adminRep = null;
@@ -79,3 +79,4 @@ public class AdminRespository implements IAdminRespository {
         return adminSet;
     }
 }
+*/

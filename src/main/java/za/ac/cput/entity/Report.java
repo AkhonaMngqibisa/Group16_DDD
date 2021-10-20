@@ -3,6 +3,7 @@ package za.ac.cput.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Objects;
 /**
  Report.java
@@ -13,7 +14,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name="Report")
-public class Report {
+public class Report implements Serializable {
 
     @Id
     private int reportID, trainerID;

@@ -6,7 +6,7 @@ Author: Bongisa Mpahleni (216205999)
 Date: 09 June 2021
 */
 
-
+/*
 import za.ac.cput.entity.Payment;
 
 import java.util.HashSet;
@@ -80,3 +80,4 @@ public class PaymentRespository implements IPaymentRespository {
         return PaymentSet;
     }
 }
+*/

@@ -1,14 +1,20 @@
 package za.ac.cput.entity;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /* Admin.java
 Entity for the Admin
 Author: Bongisa Mpahleni (216205999)
 Date: 09 June 2021
 */
-
+@Entity
+@Table(name="Admin")
 public class Admin {
 
+@Id
 private String fisrtName;
 private String lastName;
 private String phoneNo;
@@ -21,6 +27,10 @@ private int ID;
         this.lastName = builder.lastName;
         this.phoneNo = builder.phoneNo;
         this.emailAddress = builder.emailAddress;
+    }
+
+    public Admin() {
+
     }
 
     public String getFisrtName() {
