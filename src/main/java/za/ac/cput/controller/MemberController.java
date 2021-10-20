@@ -27,7 +27,7 @@ public class MemberController {
     public String create(@ModelAttribute("member")Member member)
     {
         Member newMember = MemberFactory.createMember(member.getFirstName(), member.getLastName(), member.getAddress(),member.getPhoneNo(), member.getAge(), member.getStatus(), member.getEmailAddress(), member.getPassword());
-        if((newMember.getFirstName()== null)|| (newMember.getFirstName().trim().isEmpty())
+        if((newMember.getFirstName()==null)|| (newMember.getFirstName().trim().isEmpty())
                 || (newMember.getLastName()==null) || (newMember.getLastName().trim().isEmpty())
                 || (newMember.getEmailAddress()==null) || newMember.getEmailAddress().trim().isEmpty())
             //These are compulsory

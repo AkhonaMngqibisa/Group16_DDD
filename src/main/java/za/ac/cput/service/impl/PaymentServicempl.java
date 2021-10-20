@@ -8,31 +8,13 @@ Date: 09 June 2021
 
 
 import za.ac.cput.entity.Payment;
-import za.ac.cput.repository.impl.PaymentRespository;
-
+import za.ac.cput.repository.impl.IPaymentRespository;
 import java.util.Set;
 
 public class PaymentServicempl implements PaymentService{
 
-    private static PaymentService payservice;
-    private PaymentRespository paymentRep;
 
-
-    public PaymentServicempl(PaymentRespository paymentRep) {
-        this.paymentRep = paymentRep;
-    }
-
-    public PaymentServicempl() {
-        this.paymentRep = PaymentRespository.getPaymentRep();
-    }
-
-    public static PaymentService getPayservice() {
-
-        if(payservice== null)
-            payservice=new PaymentServicempl();
-        return payservice;
-    }
-
+    private IPaymentRespository paymentRep;
 
     @Override
     public Payment create(Payment payment) {
