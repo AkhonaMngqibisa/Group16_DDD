@@ -6,12 +6,7 @@ package za.ac.cput.repository.impl;
  Date: 25 July 2021
  */
 
-import za.ac.cput.entity.Package;
-
-import java.util.HashSet;
-import java.util.Set;
-
-public class PackageRepository implements IPackageRepository {
+/*public class PackageRepository implements IPackageRepository {
     private static PackageRepository packageRepository = null;
     private Set<Package> packageSet;
 
@@ -63,4 +58,146 @@ public class PackageRepository implements IPackageRepository {
         public Set<Package> getAll () {
             return this.packageSet;
         }
+
+    @Override
+    public List<Package> findAll() {
+        return null;
     }
+
+    @Override
+    public List<Package> findAll(Sort sort) {
+        return null;
+    }
+
+    @Override
+    public Page<Package> findAll(Pageable pageable) {
+        return null;
+    }
+
+    @Override
+    public List<Package> findAllById(Iterable<Integer> iterable) {
+        return null;
+    }
+
+    @Override
+    public long count() {
+        return 0;
+    }
+
+    @Override
+    public void deleteById(Integer integer) {
+
+    }
+
+    @Override
+    public void delete(Package aPackage) {
+
+    }
+
+    @Override
+    public void deleteAllById(Iterable<? extends Integer> iterable) {
+
+    }
+
+    @Override
+    public void deleteAll(Iterable<? extends Package> iterable) {
+
+    }
+
+    @Override
+    public void deleteAll() {
+
+    }
+
+    @Override
+    public <S extends Package> S save(S s) {
+        return null;
+    }
+
+    @Override
+    public <S extends Package> List<S> saveAll(Iterable<S> iterable) {
+        return null;
+    }
+
+    @Override
+    public Optional<Package> findById(Integer integer) {
+        return Optional.empty();
+    }
+
+    @Override
+    public boolean existsById(Integer integer) {
+        return false;
+    }
+
+    @Override
+    public void flush() {
+
+    }
+
+    @Override
+    public <S extends Package> S saveAndFlush(S s) {
+        return null;
+    }
+
+    @Override
+    public <S extends Package> List<S> saveAllAndFlush(Iterable<S> iterable) {
+        return null;
+    }
+
+    @Override
+    public void deleteAllInBatch(Iterable<Package> iterable) {
+
+    }
+
+    @Override
+    public void deleteAllByIdInBatch(Iterable<Integer> iterable) {
+
+    }
+
+    @Override
+    public void deleteAllInBatch() {
+
+    }
+
+    @Override
+    public Package getOne(Integer integer) {
+        return null;
+    }
+
+    @Override
+    public Package getById(Integer integer) {
+        return null;
+    }
+
+    @Override
+    public <S extends Package> Optional<S> findOne(Example<S> example) {
+        return Optional.empty();
+    }
+
+    @Override
+    public <S extends Package> List<S> findAll(Example<S> example) {
+        return null;
+    }
+
+    @Override
+    public <S extends Package> List<S> findAll(Example<S> example, Sort sort) {
+        return null;
+    }
+
+    @Override
+    public <S extends Package> Page<S> findAll(Example<S> example, Pageable pageable) {
+        return null;
+    }
+
+    @Override
+    public <S extends Package> long count(Example<S> example) {
+        return 0;
+    }
+
+    @Override
+    public <S extends Package> boolean exists(Example<S> example) {
+        return false;
+    }
+}
+
+ */

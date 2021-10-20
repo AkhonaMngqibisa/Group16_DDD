@@ -7,13 +7,15 @@ package za.ac.cput.service.impl;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.Trainer;
 import za.ac.cput.factory.TrainerFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
+@SpringBootTest
 class TrainerServiceImplTest {
-    private static TrainerServiceImpl trainerService = (TrainerServiceImpl)  TrainerServiceImpl.getInstance();
+    private static TrainerServiceImpl trainerService;
     private static Trainer trainer = TrainerFactory.createTrainer("Thabang","Molaoa","0635584671","60 Grand Town","tm@gmail.com","10255hhg");
 
     @Test

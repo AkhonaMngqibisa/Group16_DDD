@@ -12,5 +12,5 @@ import za.ac.cput.service.IService;
 import java.util.Set;
 
 public interface AdminService extends IService<Admin, Integer> {
-    Set<Admin> getAll();
+    public Set<Admin> getAll();
 }

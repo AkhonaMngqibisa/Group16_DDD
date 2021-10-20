@@ -7,11 +7,12 @@ package za.ac.cput.repository.impl;
  */
 
 import za.ac.cput.entity.Package;
-import za.ac.cput.repository.IRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.Set;
 
-public interface IPackageRepository extends IRepository<Package, Integer> {
-    Set<Package> getAll();
+@Repository
+public interface IPackageRepository extends JpaRepository<Package, Integer> {
+
 }
 
