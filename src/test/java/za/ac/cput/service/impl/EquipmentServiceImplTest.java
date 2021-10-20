@@ -17,7 +17,9 @@ Date: 28 July 2021
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest
+
 class EquipmentServiceImplTest {
+
     private static EquipmentServiceImpl equipmentService;
     private static Equipment equipment = EquipmentFactory.createEquipment("Kettlebel", "6kg", "cast steel weight");
 

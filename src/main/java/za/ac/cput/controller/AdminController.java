@@ -26,7 +26,7 @@ public class AdminController {
             if((newAdmin.getFisrtName()== null)|| (newAdmin.getFisrtName().trim().isEmpty())
                     || (newAdmin.getLastName()==null) || (newAdmin.getLastName().trim().isEmpty())
                     || (newAdmin.getEmailAddress()==null) || newAdmin.getEmailAddress().trim().isEmpty())
-                /
+
 
                 throw new NullPointerException();
             else
