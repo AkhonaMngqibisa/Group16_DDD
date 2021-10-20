@@ -12,6 +12,6 @@ import za.ac.cput.service.IService;
 import java.util.Set;
 
 public interface IPackageService extends IService<Package, Integer> {
-  Set<Package> getAll();
+  public Set<Package> getAll();
 }
 

@@ -6,11 +6,13 @@ Author: Bongisa Mpahleni (216205999)
 Date: 09 June 2021
 */
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Admin;
 import za.ac.cput.repository.impl.IAdminRespository;
 
 import java.util.Set;
 
+@Service
 public class AdminServicempl implements AdminService{
 
 
