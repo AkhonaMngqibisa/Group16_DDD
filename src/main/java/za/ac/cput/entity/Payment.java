@@ -7,9 +7,16 @@ Date: 09 June 2021
 */
 
 
+import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Payment")
 public class Payment {
 
+@Id
 private  int paymentID;
 private  double paymentAmount;
 private String paymentDate;
