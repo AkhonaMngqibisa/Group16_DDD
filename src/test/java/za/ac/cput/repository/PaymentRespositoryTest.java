@@ -1,6 +1,6 @@
 package za.ac.cput.repository;
 
-
+/*
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -58,3 +58,4 @@ class PaymentRespositoryTest {
         System.out.println(paymentRespository.getAll());
     }
 }
+*/

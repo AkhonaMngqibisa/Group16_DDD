@@ -6,51 +6,46 @@ package za.ac.cput.service.impl;
  Date: 29 July 2021
  */
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Report;
-import za.ac.cput.repository.impl.ReportRepository;
+import za.ac.cput.repository.impl.IReportRepository;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class ReportServiceImpl implements IReportService {
 
     public static IReportService iReportService = null;
-    private ReportRepository reportRepository;
-
-    private ReportServiceImpl(){
-        this.reportRepository = (ReportRepository) ReportRepository.geReportRepository();
-    }
-
-        public static IReportService getReportService(){
-        if(iReportService == null) {
-            iReportService = new ReportServiceImpl();
-        }
-        return iReportService;
-    }
+    @Autowired
+    private IReportRepository iReportRepository;
 
     @Override
     public Report create(Report report) {
-        return this.reportRepository.create(report);
+        return this.iReportRepository.save(report);
     }
 
     @Override
-    public Report read(Integer integer) {
-        return this.reportRepository.read(integer);
+    public Report read(Integer reportId) {
+        return this.iReportRepository.findById(reportId).orElse(null);
     }
 
     @Override
     public Report update(Report report) {
-        return this.reportRepository.update(report);
+        if(this.iReportRepository.existsById(report.getReportID()))
+        this.iReportRepository.save(report);
+        return report;
     }
 
     @Override
-    public boolean delete(Integer integer) {
-        return this.reportRepository.delete(integer);
+    public boolean delete(Integer reportId) {
+        this.iReportRepository.deleteById(reportId);
+        return !this.iReportRepository.existsById(reportId);
     }
 
     @Override
     public Set<Report> getAll() {
-        return this.reportRepository.getAll();
+        return this.iReportRepository.findAll().stream().collect(Collectors.toSet());
     }
 }

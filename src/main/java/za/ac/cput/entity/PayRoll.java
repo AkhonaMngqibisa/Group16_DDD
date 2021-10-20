@@ -4,8 +4,15 @@ Entity for the Payroll.
 Author: Bokang Molaoa (218131097) ADP3 Assignment 3.
 Date: 09 June 2021
 */
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name="PayRoll")
 public class PayRoll {
+    @Id
     private int payrollID;
     private String trainerID;
     private String hours;

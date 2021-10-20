@@ -11,7 +11,5 @@ import za.ac.cput.service.IService;
 import java.util.Set;
 
 public interface PayRollService extends IService<PayRoll, Integer> {
-    boolean delete(String integer);
-
     public Set<PayRoll> getAll();
 }
