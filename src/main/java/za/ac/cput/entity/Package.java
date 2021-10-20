@@ -18,8 +18,9 @@ import java.util.Objects;
 public class Package implements Serializable {
 
     @Id
+    private int packageID;
 
-    private int packageID, membershipID, hoursPerWeek;
+    private int membershipID, hoursPerWeek;
     private double price;
     private String packageName;
 

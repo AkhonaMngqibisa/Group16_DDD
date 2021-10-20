@@ -6,17 +6,6 @@ package za.ac.cput.repository.impl;
  Date: 25 July 2021
  */
 
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import za.ac.cput.entity.Package;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-
 /*public class PackageRepository implements IPackageRepository {
     private static PackageRepository packageRepository = null;
     private Set<Package> packageSet;

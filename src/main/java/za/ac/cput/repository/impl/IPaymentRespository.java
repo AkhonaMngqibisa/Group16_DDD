@@ -6,11 +6,11 @@ Author: Bongisa Mpahleni (216205999)
 Date: August  2021
 */
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import za.ac.cput.entity.Payment;
-import za.ac.cput.repository.IRepository;
 
 import java.util.Set;
 
-public interface IPaymentRespository extends IRepository<Payment, Integer> {
-    Set<Payment> getAll();
+public interface IPaymentRespository extends JpaRepository<Payment, Integer> {
+   public Set<Payment> getAll();
 }

@@ -12,5 +12,5 @@ import za.ac.cput.service.IService;
 import java.util.Set;
 
 public interface PaymentService extends IService<Payment, Integer> {
-    Set<Payment> getAll();
+   Set<Payment> getAll();
 }

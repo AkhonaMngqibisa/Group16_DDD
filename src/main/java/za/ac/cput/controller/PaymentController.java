@@ -10,7 +10,7 @@ import za.ac.cput.service.impl.PaymentService;
 import java.util.Set;
 
 
-@Controller
+@RestController
 @RequestMapping("/Payment")
 public class PaymentController {
 
