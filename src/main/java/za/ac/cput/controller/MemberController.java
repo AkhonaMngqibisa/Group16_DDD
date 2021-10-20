@@ -3,11 +3,14 @@ package za.ac.cput.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Member;
 import za.ac.cput.factory.MemberFactory;
 import za.ac.cput.service.impl.MemberService;
 
+import javax.validation.Valid;
 import java.util.Set;
 
 /* MemberController.java
@@ -73,5 +76,6 @@ public class MemberController {
 
         return "newMemberForm";
     }
+
 
 }

@@ -6,13 +6,6 @@ package za.ac.cput.repository;
  Date: 25 July 2021
  */
 
-import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Package;
-import za.ac.cput.factory.PackageFactory;
-import za.ac.cput.repository.impl.IPackageRepository;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 /*public class PackageRepositoryTest {
     private static IPackageRepository packageRepository = PackageRepository.getPackageRepository();
     private static Package aPackage = PackageFactory.createPackage(015, 025,

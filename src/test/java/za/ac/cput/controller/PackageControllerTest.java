@@ -29,7 +29,7 @@ class PackageControllerTest {
         String url = baseURL+"/create";
         System.out.println(url);
 
-        ResponseEntity<Package> postResponseEntity = restTemplate.postForEntity(url, aPackage,Package.class);
+        ResponseEntity<Package> postResponseEntity = restTemplate.postForEntity(url, aPackage, Package.class);
         assertNotNull(postResponseEntity);
         assertNotNull(postResponseEntity.getBody());
         assertEquals(postResponseEntity.getStatusCode(), HttpStatus.OK);
@@ -60,7 +60,7 @@ class PackageControllerTest {
         String url = baseURL+"/update";
         System.out.println(url);
         System.out.println("updated");
-        ResponseEntity<Package> response = restTemplate.postForEntity(url,aPackage1, Package.class);
+        ResponseEntity<Package> response = restTemplate.postForEntity(url, aPackage1, Package.class);
         assertNotNull(response.getBody());
     }
 
