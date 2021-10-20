@@ -1,5 +1,8 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 /**
  Report.java
@@ -8,7 +11,11 @@ import java.util.Objects;
  Date: 09 June 2021
  */
 
+@Entity
+@Table(name="Report")
 public class Report {
+
+    @Id
     private int reportID, trainerID;
     private String reportDate;
     private String attendance;

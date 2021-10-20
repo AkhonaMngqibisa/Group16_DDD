@@ -1,6 +1,10 @@
 package za.ac.cput.entity;
 
 import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  Package.java
  Entity: Package
@@ -8,7 +12,12 @@ import java.util.Objects;
  Date: 09 June 2021
  */
 
+@Entity
+@Table(name="Package")
 public class Package {
+
+    @Id
+
     private int packageID, membershipID, hoursPerWeek;
     private double price;
     private String packageName;
@@ -21,7 +30,7 @@ public class Package {
         this.packageName = builder.packageName;
     }
 
-    protected Package() {
+    public Package() {
 
     }
 

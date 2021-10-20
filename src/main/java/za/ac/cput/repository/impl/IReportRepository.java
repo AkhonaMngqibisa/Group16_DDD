@@ -1,10 +1,10 @@
 package za.ac.cput.repository.impl;
 
 import za.ac.cput.entity.Report;
-import za.ac.cput.repository.IRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.Set;
+@Repository
+public interface IReportRepository extends JpaRepository<Report, Integer> {
 
-public interface IReportRepository extends IRepository<Report, Integer> {
-    Set<Report> getAll();
 }

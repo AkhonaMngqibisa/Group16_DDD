@@ -5,6 +5,8 @@ package za.ac.cput.factory;
  Date: 09 June 2021
  */
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Report;
 
@@ -17,7 +19,8 @@ class ReportFactoryTest {
                 0021,
                 "2021/03/16",
                 "Weekly");
+        System.out.println(report);
 
-        assertEquals(report, report);
+        assertTrue(report instanceof Report);
     }
 }

@@ -14,10 +14,9 @@ import java.util.Set;
 public class PackageController {
     @Autowired
     private IPackageService iPackageService;
-    @PostMapping("/create")
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public Package create(@RequestBody Package aPackag) {
-        Package aPackage = PackageFactory.createPackage(aPackag.getPackageID(),
-                aPackag.getMembershipID(),
+        Package aPackage = PackageFactory.createPackage(
                 aPackag.getHoursPerWeek(),
                 aPackag.getPrice(), aPackag.getPackageName());
         return iPackageService.create(aPackage);
