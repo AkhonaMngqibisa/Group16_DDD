@@ -21,8 +21,8 @@ public class PaymentController {
         public String create(@ModelAttribute("payment") Payment payment)
         {
             Payment newPayment = PaymentFactory.creatPayment(payment.getPaymentAmount(),payment.getPaymentDate());
-            if((newPayment.getPaymentAmount()== null)|| (newPayment.getPaymentAmount().trim().isEmpty())
-                    || (newPayment.getPaymentDate()==null) || (newPayment.getPaymentDate().trim().isEmpty())
+            if((newPayment.getPaymentAmount()== 0)
+                    || (newPayment.getPaymentDate()==null) || (newPayment.getPaymentDate().trim().isEmpty()))
 
             throw new NullPointerException();
 

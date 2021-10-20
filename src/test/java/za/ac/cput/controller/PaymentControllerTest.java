@@ -49,7 +49,7 @@ class PaymentControllerTest {
     @Disabled
     void c_update()
     {
-        Payment updated = new Payment().Builder().copy(payment).setPaymentAmount(10000.00).build();
+        Payment updated = new Payment.Builder().copy(payment).setPaymentAmount(10000.00).build();
         String url = baseURL+"/update";
         System.out.println("URL: "+url);
         System.out.println("Updated data: "+updated);

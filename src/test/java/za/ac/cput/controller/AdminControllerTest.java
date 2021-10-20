@@ -42,14 +42,14 @@ class AdminControllerTest {
         String url = baseURL+"/read/"+admin.getID();
         System.out.println("URL: "+url);
         ResponseEntity<Admin> response = restTemplate.getForEntity(url, Admin.class);
-        assertEquals(admin.getID(),response.getBody().getID();
+        assertEquals(admin.getID(),response.getBody().getID());
     }
 
     @Test
     @Disabled
     void c_update()
     {
-        Admin updated = new Admin().Builder().copy(admin).setLastName("Dr Mpahleni").build();
+        Admin updated = new Admin.Builder().copy(admin).setLastName("Dr Mpahleni").build();
         String url = baseURL+"/update";
         System.out.println("URL: "+url);
         System.out.println("Updated data: "+updated);
