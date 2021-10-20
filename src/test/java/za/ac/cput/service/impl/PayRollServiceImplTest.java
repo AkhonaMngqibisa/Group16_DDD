@@ -7,13 +7,15 @@ package za.ac.cput.service.impl;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.PayRoll;
 import za.ac.cput.factory.PayRollFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
+@SpringBootTest
 class PayRollServiceImplTest {
-    private static PayRollServiceImpl payRollService = (PayRollServiceImpl)  PayRollServiceImpl.getInstance();
+    private static PayRollServiceImpl payRollService;
     private static PayRoll payRoll = PayRollFactory.createPayRoll(8000,"562621","2");
 
     @Test
