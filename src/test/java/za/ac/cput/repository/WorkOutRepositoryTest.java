@@ -48,7 +48,7 @@ public class WorkOutRepositoryTest {
     @Test
     void c_updateExistingWorkOutTest()
     {
-        WorkOut updated = new WorkOut.Builder(workOut).setWorkoutId(5656).setWorkoutName("Limyoli").setWorkoutDescription("yyyyyy").build();
+        WorkOut updated = new WorkOut.Builder().setWorkoutId(5656).setWorkoutName("Limyoli").setWorkoutDescription("yyyyyy").build();
         assertNotNull(repository.update(updated));
         System.out.println("\nUpdated\n---\n" + updated + "---");
     }

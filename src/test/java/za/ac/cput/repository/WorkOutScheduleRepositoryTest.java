@@ -49,7 +49,7 @@ public class WorkOutScheduleRepositoryTest {
     @Test
     void c_updateExistingWorkOutScheduleTest()
     {
-        WorkOutSchedule updated = new WorkOutSchedule.Builder(workOutSchedule).setWorkoutId(5656).setScheduleId(4546).setMemberId(7879).setTrainerId(234).setWorkoutDate("15 November 2021").setWorkoutTime("13H00").build();
+        WorkOutSchedule updated = new WorkOutSchedule.Builder().setWorkoutId(5656).setScheduleId(4546).setMemberId(7879).setTrainerId(234).setWorkoutDate("15 November 2021").setWorkoutTime("13H00").build();
         assertNotNull(repository.update(updated));
         System.out.println("\nUpdated\n---\n" + updated + "---");
     }

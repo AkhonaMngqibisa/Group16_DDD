@@ -6,42 +6,70 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.WorkOut;
+import za.ac.cput.entity.WorkOutSchedule;
 import za.ac.cput.factory.WorkOutFactory;
+import za.ac.cput.service.impl.WorkOutService;
 import za.ac.cput.repository.impl.IWorkOutRepository;
 
 import java.util.Set;
 
+@Controller
+@RequestMapping("/WorkOut")
 public class WorkOutController {
+
     @Autowired
-    private IWorkOutRepository IWorkOut;
+    private WorkOutService workOutService;
 
-    @PostMapping("/create")
-    public WorkOut create(@RequestBody WorkOut workOut) {
-        WorkOut WorkOut2 = WorkOutFactory.createWorkOut(workOut.getWorkoutId(), workOut.getWorkoutName()
-                ,workOut.getWorkoutDescription());
-        return IWorkOut.create(workOut);
+    @RequestMapping(value = "/create",method = RequestMethod.POST)
+    public String create(@ModelAttribute("WorkOut")WorkOut workOut) {
+        WorkOut newWorkOut = WorkOutFactory.createWorkOut(workOut.getWorkoutId(),
+                workOut.getWorkoutName(),
+                workOut.getWorkoutDescription());
+
+//        if(!(!(newWorkOut.getWorkoutId() = 89) && !(newWorkOut.getWorkoutId().trim.isEmpty())
+//                && !(newMember.getLastName() == null) && !(newMember.getLastName().trim().isEmpty())
+//                && !(newMember.getEmailAddress() == null) && !newMember.getEmailAddress().trim().isEmpty()))
+//            //These are compulsory
+//
+//            throw new NullPointerException();
+//        else
+//            memberService.create(newMember);
+//        System.out.println("SHOW THE MEMBER"+member.toString());
+//        return "redirect:/member/getall";
+        return null;
     }
-    @GetMapping("/read/{WorkOutId}")
-    public WorkOut read(@PathVariable int workOutId) {
-        return IWorkOut.read(workOutId);
+    @GetMapping("/read/{workOutId}")
+    public WorkOut read(@PathVariable int workOut) {
+        return IWorkOutRepository.read(workOut);
     }
 
-    @GetMapping("/update")
-    public WorkOut update(@RequestBody WorkOut workOut){
-        return IWorkOut.update(workOut);
+    @PostMapping("/update")
+    public WorkOut update(@RequestBody WorkOut workOut)
+    {
+        return IWorkOutRepository.update(workOut);
+    }
 
+    @DeleteMapping("/delete/{id}")
+    public boolean delete(@PathVariable int id)
+    {
+        return IWorkOutRepository.delete(id);
     }
-    @GetMapping("/delete/{reportID}")
-    public boolean delete(@PathVariable int workOutId){
-        return IWorkOut.delete(workOutId);
-    }
-    @GetMapping("/getAll")
+
+
+    @GetMapping("/getall")
     public Set<WorkOut> getAll(){
-        return IWorkOut.getAll();
+        return IWorkOutRepository.getAll();}
+
+    @RequestMapping("/new")
+    public String showNewWorkOut(Model model) {
+        WorkOut workOut = new WorkOut();
+        model.addAttribute("workOut", workOut);
+
+        return "newWorkOut";
     }
+
 }

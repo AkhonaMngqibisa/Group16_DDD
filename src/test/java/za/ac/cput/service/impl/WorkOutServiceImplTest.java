@@ -33,7 +33,7 @@ public class WorkOutServiceImplTest {
 
     @Test
     void c_update() {
-        WorkOut updated = new WorkOut.Builder(workOut).setWorkoutId(5665).setWorkoutName("RunnerUp").setWorkoutDescription("yyyyy").build();
+        WorkOut updated = new WorkOut.Builder().setWorkoutId(5665).setWorkoutName("RunnerUp").setWorkoutDescription("yyyyy").build();
         updated = WorkOutServiceImpl.update(updated);
         System.out.println("Updated: " + updated);
     }

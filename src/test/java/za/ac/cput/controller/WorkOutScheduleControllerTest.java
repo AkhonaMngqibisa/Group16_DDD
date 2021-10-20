@@ -64,7 +64,7 @@ class WorkOutScheduleControllerTest {
     {
         WorkOutSchedule updated =
                 new WorkOutSchedule
-                        .Builder(workOutSchedule)
+                        .Builder()
                         .setScheduleId(46546)
                         .setTrainerId(6776)
                         .setMemberId(6767)

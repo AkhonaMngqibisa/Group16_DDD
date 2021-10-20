@@ -4,7 +4,6 @@
 package za.ac.cput.service.impl;
 
 import org.junit.jupiter.api.*;
-import za.ac.cput.entity.Member;
 import za.ac.cput.entity.WorkOutSchedule;
 import za.ac.cput.factory.WorkOutScheduleFactory;
 import za.ac.cput.service.IService;
@@ -54,7 +53,7 @@ void b_read() {
 
     @Test
     void c_update() {
-        WorkOutSchedule updated = new WorkOutSchedule.Builder(workOutSchedule).setWorkoutId(5665)
+        WorkOutSchedule updated = new WorkOutSchedule.Builder().setWorkoutId(5665)
                 .setScheduleId(565)
                 .setMemberId(656)
                 .setTrainerId(6767)

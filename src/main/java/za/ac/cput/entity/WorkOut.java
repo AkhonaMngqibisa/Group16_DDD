@@ -38,7 +38,7 @@ public class WorkOut {
         private String workoutName;
         private String workoutDescription;
 
-        public Builder(WorkOut workOut) {
+        public Builder() {
         }
 
         public Builder setWorkoutId(int workoutId) {

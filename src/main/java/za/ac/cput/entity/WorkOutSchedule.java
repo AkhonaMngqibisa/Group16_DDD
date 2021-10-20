@@ -5,9 +5,6 @@ package za.ac.cput.entity;
 
  */
 
-import org.springframework.http.HttpHeaders;
-import za.ac.cput.repository.impl.WorkOutScheduleRepository;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -47,7 +44,7 @@ public class WorkOutSchedule {
         private String workoutDate;
         private String workoutTime;
 
-        public Builder(WorkOutSchedule workOutSchedule) {
+        public Builder() {
         }
 
         public WorkOutSchedule.Builder setScheduleId(int scheduleId) {
