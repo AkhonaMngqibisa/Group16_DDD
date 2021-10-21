@@ -2,7 +2,10 @@ package za.ac.cput.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Objects;
+
 /**
  Package.java
  Entity: Package
@@ -11,9 +14,12 @@ import java.util.Objects;
  */
 
 @Entity
-public class Package {
+@Table(name="Package")
+public class Package implements Serializable {
+
     @Id
     private int packageID;
+
     private int membershipID, hoursPerWeek;
     private double price;
     private String packageName;
@@ -26,7 +32,7 @@ public class Package {
         this.packageName = builder.packageName;
     }
 
-    protected Package() {
+    public Package() {
 
     }
 
@@ -140,6 +146,6 @@ public class Package {
         public int hashCode() {
             return Objects.hash(packageID);
         }
+
     }
 }
-

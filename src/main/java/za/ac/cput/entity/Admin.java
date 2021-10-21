@@ -1,37 +1,40 @@
 package za.ac.cput.entity;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /* Admin.java
 Entity for the Admin
 Author: Bongisa Mpahleni (216205999)
 Date: 09 June 2021
 */
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 @Entity
+@Table(name="Admin")
 public class Admin {
 
-    private String firstName;
+    @Id
+    private String fisrtName;
     private String lastName;
     private String phoneNo;
     private String emailAddress;
-    @Id
     private int ID;
-
-    public Admin() {};
 
     public Admin(Builder builder) {
         this.ID = builder.ID;
-        this.firstName = builder.firstName;
+        this.fisrtName = builder.firstName;
         this.lastName = builder.lastName;
         this.phoneNo = builder.phoneNo;
         this.emailAddress = builder.emailAddress;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Admin() {
+
+    }
+
+    public String getFisrtName() {
+        return fisrtName;
     }
 
     public String getLastName() {
@@ -53,7 +56,7 @@ public class Admin {
     @Override
     public String toString() {
         return "Admin{" +
-                "fisrtName='" + firstName + '\'' +
+                "fisrtName='" + fisrtName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phoneNo='" + phoneNo + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
@@ -110,12 +113,16 @@ public class Admin {
         public Builder copy(Admin admin)
         {
             this.ID = admin.ID;
-            this.firstName= admin.firstName;
+            this.firstName= admin.fisrtName;
             this.lastName=admin.lastName;
             this.phoneNo=admin.phoneNo;
             this.emailAddress=admin.emailAddress;
 
+
             return this;
         }
+
     }
+
+
 }

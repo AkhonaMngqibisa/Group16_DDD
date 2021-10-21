@@ -2,6 +2,8 @@ package za.ac.cput.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Objects;
 /**
  Report.java
@@ -11,11 +13,11 @@ import java.util.Objects;
  */
 
 @Entity
-public class Report {
+@Table(name="Report")
+public class Report implements Serializable {
 
     @Id
-    private int reportID;
-    private int trainerID;
+    private int reportID, trainerID;
     private String reportDate;
     private String attendance;
 
@@ -47,7 +49,7 @@ public class Report {
         return attendance;
     }
 
-    public void CalcAttendance(long workoutScheduleCode) {
+    public void CalcAttendence(long workoutScheduleCode) {
         /*
          * Attendance is based on
          * number of registered workout
