@@ -8,7 +8,7 @@ Date: 09 June 2021
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Payment;
-import za.ac.cput.repository.impl.IPaymentRespository;
+import za.ac.cput.repository.impl.IPaymentRepository;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -17,7 +17,7 @@ public class PaymentServicempl implements PaymentService{
 
 
     @Autowired
-    private IPaymentRespository paymentRep;
+    private IPaymentRepository paymentRep;
 
     @Override
     public Payment create(Payment payment) {

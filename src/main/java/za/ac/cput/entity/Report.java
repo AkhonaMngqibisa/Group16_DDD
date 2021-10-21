@@ -17,7 +17,8 @@ import java.util.Objects;
 public class Report implements Serializable {
 
     @Id
-    private int reportID, trainerID;
+    private int reportID;
+    private int trainerID;
     private String reportDate;
     private String attendance;
 
