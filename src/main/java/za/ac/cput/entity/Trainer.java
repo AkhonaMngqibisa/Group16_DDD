@@ -4,18 +4,20 @@ Entity for the Trainer.
 Author: Bokang Molaoa (218131097) ADP3 Assignment 3.
 Date: 09 June 2021
 */
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 @Entity
+@Table(name="Trainer")
 public class Trainer {
     @Id
     private int trainerID;
     private String firstName, lastName, phoneNo, address;
     private String emailAddress,password;
 
-    public Trainer() {}
+    private Trainer() {}
 
     //Constructor
     private Trainer(Builder builder) {
@@ -116,14 +118,6 @@ public class Trainer {
 
         //Copy method
         public Builder copy(Trainer trainer) {
-            this.firstName = trainer.firstName;
-            this.lastName = trainer.lastName;
-            this.address = trainer.address;
-            this.phoneNo = trainer.phoneNo;
-            this.emailAddress = trainer.emailAddress;
-            this.password = trainer.password;
-            this.trainerID = trainer.trainerID;
-
             return this;
         }
     }
