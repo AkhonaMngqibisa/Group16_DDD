@@ -15,11 +15,11 @@ import javax.persistence.Table;
 @Table(name="Payment")
 public class Payment
 {
-    @Id
-    private  int paymentID;
+@Id
+private  int paymentID;
 
-    private  double paymentAmount;
-    private String paymentDate;
+private  double paymentAmount;
+private String paymentDate;
 
     public Payment(Builder builder) {
         this.paymentID = builder.paymentID;
