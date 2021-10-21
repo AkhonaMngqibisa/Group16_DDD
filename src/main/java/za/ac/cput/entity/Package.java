@@ -1,5 +1,7 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 /**
  Package.java
@@ -8,8 +10,11 @@ import java.util.Objects;
  Date: 09 June 2021
  */
 
+@Entity
 public class Package {
-    private int packageID, membershipID, hoursPerWeek;
+    @Id
+    private int packageID;
+    private int membershipID, hoursPerWeek;
     private double price;
     private String packageName;
 

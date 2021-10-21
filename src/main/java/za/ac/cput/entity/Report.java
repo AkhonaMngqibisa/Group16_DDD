@@ -1,5 +1,7 @@
 package za.ac.cput.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 /**
  Report.java
@@ -8,8 +10,12 @@ import java.util.Objects;
  Date: 09 June 2021
  */
 
+@Entity
 public class Report {
-    private int reportID, trainerID;
+
+    @Id
+    private int reportID;
+    private int trainerID;
     private String reportDate;
     private String attendance;
 
@@ -41,7 +47,7 @@ public class Report {
         return attendance;
     }
 
-    public void CalcAttendence(long workoutScheduleCode) {
+    public void CalcAttendance(long workoutScheduleCode) {
         /*
          * Attendance is based on
          * number of registered workout

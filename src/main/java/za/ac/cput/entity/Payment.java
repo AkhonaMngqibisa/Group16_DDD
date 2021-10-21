@@ -7,12 +7,18 @@ Date: 09 June 2021
 */
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class Payment {
 
-private  int paymentID;
-private  double paymentAmount;
-private String paymentDate;
+    @Id
+    private int paymentID;
+    private double paymentAmount;
+    private String paymentDate;
+
+    public Payment() {}
 
     public Payment(Builder builder) {
         this.paymentID = builder.paymentID;

@@ -5,8 +5,12 @@ package za.ac.cput.entity;
 
  */
 
-public class WorkOutSchedule {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class WorkOutSchedule {
+    @Id
     private int scheduleId;
     private int trainerId;
     private int memberId;
@@ -14,6 +18,7 @@ public class WorkOutSchedule {
     private String workoutDate;
     private String workoutTime;
 
+    public WorkOutSchedule() {}
 
     private WorkOutSchedule(WorkOutSchedule.Builder builder) {
         this.scheduleId = builder.scheduleId;

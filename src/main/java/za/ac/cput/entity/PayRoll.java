@@ -5,19 +5,24 @@ Author: Bokang Molaoa (218131097) ADP3 Assignment 3.
 Date: 09 June 2021
 */
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class PayRoll {
+    @Id
     private int payrollID;
     private String trainerID;
     private String hours;
 
-private PayRoll() {}
+    public PayRoll() {}
 
-private PayRoll (Builder builder)
-{
-    this.payrollID=builder.payrollID;
-    this.trainerID=builder.trainerID;
-    this.hours=builder.hours;
-}
+    private PayRoll (Builder builder)
+    {
+        this.payrollID=builder.payrollID;
+        this.trainerID=builder.trainerID;
+        this.hours=builder.hours;
+    }
 
     public int getPayrollID() { return payrollID; }
 
@@ -65,6 +70,10 @@ private PayRoll (Builder builder)
 
         //Copy method
         public Builder copy(PayRoll payRoll) {
+            this.payrollID = payRoll.payrollID;
+            this.trainerID = payRoll.trainerID;
+            this.hours = payRoll.hours;
+
             return this;
         }
     }
