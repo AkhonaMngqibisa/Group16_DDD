@@ -1,5 +1,6 @@
 package za.ac.cput.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -53,6 +54,7 @@ class ReportControllerTest {
     }
 
     @Test
+    @Disabled
     void update() {
         Report report1 = new Report.Builder().copy(report).setReportID(045).
                 setTrainerID(0015).setReportDate
@@ -66,12 +68,14 @@ class ReportControllerTest {
     }
 
     @Test
+    @Disabled
     void delete() {
         String url = baseURL + "delete/" + report.getReportID();
         restTemplate.delete(url);
     }
 
     @Test
+    @Disabled
     void getAll() {
         String url = baseURL + "all/";
         System.out.println(url);

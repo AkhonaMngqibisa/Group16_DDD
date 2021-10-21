@@ -6,51 +6,44 @@ package za.ac.cput.service.impl;
  Date: 29 July 2021
  */
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Package;
-import za.ac.cput.repository.impl.PackageRepository;
+import za.ac.cput.repository.impl.IPackageRepository;
+import java.util.stream.Collectors;
 
 import java.util.Set;
 
 @Service
 public class PackageServiceImpl implements IPackageService{
 
-    public static IPackageService iPackageService = null;
-    private PackageRepository packageRepository;
-
-    public PackageServiceImpl() {
-        this.packageRepository = (PackageRepository) PackageRepository.getPackageRepository();
-    }
-
-    public static IPackageService getPackageService(){
-        if(iPackageService == null) {
-            iPackageService = new PackageServiceImpl();
-        }
-        return iPackageService;
-    }
+    private static IPackageService iPackageService = null;
+    @Autowired
+    private IPackageRepository ipackageRepository;
 
     @Override
     public Package create(Package aPackage) {
-        return this.packageRepository.create(aPackage);
+        return this.ipackageRepository.save(aPackage);
     }
 
     @Override
-    public Package read(Integer integer) {
-        return this.packageRepository.read(integer);
+    public Package read(Integer packageId) {
+        return this.ipackageRepository.findById(packageId).orElse(null);
     }
 
     @Override
     public Package update(Package aPackage) {
-        return this.packageRepository.update(aPackage);
+        return this.ipackageRepository.save(aPackage);
     }
 
     @Override
-    public boolean delete(Integer integer) {
-        return this.packageRepository.delete(integer);
+    public boolean delete(Integer packageId) {
+         this.ipackageRepository.deleteById(packageId);
+        return !this.ipackageRepository.existsById(packageId);
     }
 
     @Override
     public Set<Package> getAll() {
-        return this.packageRepository.getAll();
+        return this.ipackageRepository.findAll().stream().collect(Collectors.toSet());
     }
 }

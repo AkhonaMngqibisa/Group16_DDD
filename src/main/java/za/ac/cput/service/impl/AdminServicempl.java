@@ -6,31 +6,17 @@ Author: Bongisa Mpahleni (216205999)
 Date: 09 June 2021
 */
 
+import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Admin;
-import za.ac.cput.repository.impl.AdminRespository;
+import za.ac.cput.repository.impl.IAdminRespository;
 
 import java.util.Set;
 
+@Service
 public class AdminServicempl implements AdminService{
 
-    private static AdminService adminService;
-    private AdminRespository adminrep;
 
-
-    public AdminServicempl(AdminRespository adminrep) {
-        this.adminrep = adminrep;
-    }
-
-    public AdminServicempl() {
-        this.adminrep = AdminRespository.getAdminRep();
-    }
-
-    public static AdminService getAdminService() {
-
-        if(adminService== null)
-            adminService=new AdminServicempl();
-        return adminService;
-    }
+    private IAdminRespository adminrep;
 
     @Override
     public Admin create(Admin admin) {

@@ -6,6 +6,8 @@ package za.ac.cput.factory;
  */
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Package;
 
@@ -15,9 +17,9 @@ class PackageFactoryTest {
     @Test
     void createPackage() {
         Package aPackage = PackageFactory.createPackage(015, 025,
-                8, 350.00,
                 "Mega Package");
+        System.out.println(aPackage);
 
-        assertEquals(aPackage, aPackage);
+        assertTrue(aPackage instanceof Package);
     }
 }
