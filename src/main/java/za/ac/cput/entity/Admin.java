@@ -14,12 +14,12 @@ Date: 09 June 2021
 @Table(name="Admin")
 public class Admin {
 
-    @Id
-    private String fisrtName;
-    private String lastName;
-    private String phoneNo;
-    private String emailAddress;
-    private int ID;
+@Id
+private String fisrtName;
+private String lastName;
+private String phoneNo;
+private String emailAddress;
+private int ID;
 
     public Admin(Builder builder) {
         this.ID = builder.ID;
