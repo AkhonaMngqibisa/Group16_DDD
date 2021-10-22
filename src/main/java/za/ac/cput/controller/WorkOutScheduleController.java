@@ -5,47 +5,53 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.WorkOutSchedule;
 import za.ac.cput.factory.WorkOutScheduleFactory;
 import za.ac.cput.repository.impl.IWorkOutScheduleRepository;
+import za.ac.cput.service.impl.WorkOutScheduleService;
+import za.ac.cput.service.impl.WorkOutService;
 
 import java.util.Set;
 
 public class WorkOutScheduleController {
 
     @Autowired
-    private IWorkOutScheduleRepository IWorkOutSchedule;
+    private WorkOutScheduleService workOutScheduleService;
 
     @PostMapping("/create")
-    public WorkOutSchedule create(@RequestBody WorkOutSchedule WorkOutSchedule) {
-        WorkOutSchedule WorkOutSchedule2 = WorkOutScheduleFactory.createWorkOutSchedule(WorkOutSchedule.getScheduleId(), WorkOutSchedule.getTrainerId()
-                ,WorkOutSchedule.getMemberId(),
-                WorkOutSchedule.getWorkoutId(),
-                WorkOutSchedule.getWorkoutDate(),
-                WorkOutSchedule.getWorkoutTime());
-        return IWorkOutSchedule.create(WorkOutSchedule);
+    @ResponseBody
+    public WorkOutSchedule create(@RequestBody WorkOutSchedule workOutSchedule) {
+        WorkOutSchedule newWorkOutSchedule = WorkOutScheduleFactory.createWorkOutSchedule(
+                workOutSchedule.getScheduleId(),
+                workOutSchedule.getTrainerId(),
+                workOutSchedule.getMemberId(),
+                workOutSchedule.getWorkoutId(),
+                workOutSchedule.getWorkoutDate(),
+                workOutSchedule.getWorkoutTime());
+        return workOutScheduleService.create(newWorkOutSchedule);
     }
     @GetMapping("/read/{scheduleId}")
+    @ResponseBody
     public WorkOutSchedule read(@PathVariable int scheduleId) {
-        return IWorkOutSchedule.read(scheduleId);
+        return workOutScheduleService.read(scheduleId);
     }
 
     @GetMapping("/update")
+    @ResponseBody
     public WorkOutSchedule update(@RequestBody WorkOutSchedule WorkOutSchedule){
-        return IWorkOutSchedule.update(WorkOutSchedule);
-
+        return workOutScheduleService.update(WorkOutSchedule);
     }
+
     @GetMapping("/delete/{scheduleId}")
+    @ResponseBody
     public boolean delete(@PathVariable int scheduleId){
-        return IWorkOutSchedule.delete(scheduleId);
+        return workOutScheduleService.delete(scheduleId);
     }
 
     @GetMapping("/getAll")
+    @ResponseBody
     public Set<WorkOutSchedule> getAll(){
-        return IWorkOutSchedule.getAll();
+        return workOutScheduleService.getAll();
     }
 }

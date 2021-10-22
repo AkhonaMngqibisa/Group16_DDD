@@ -15,8 +15,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class TrainerServiceImpl implements TrainerService {
-    private static TrainerService trainerService= null;
-
     @Autowired
     private ITrainerRepository trainerRepository;
 

@@ -6,11 +6,13 @@ package za.ac.cput.repository.impl;
 
  */
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.entity.WorkOutSchedule;
 import za.ac.cput.repository.IRepository;
 import java.util.Set;
 
-public interface IWorkOutScheduleRepository extends IRepository <WorkOutSchedule, Integer>
+@Repository
+public interface IWorkOutScheduleRepository extends JpaRepository<WorkOutSchedule, Integer>
 {
-    Set<WorkOutSchedule> getAll();
 }

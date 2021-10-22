@@ -4,16 +4,20 @@
 package za.ac.cput.service.impl;
 
 import org.junit.jupiter.api.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.entity.WorkOutSchedule;
 import za.ac.cput.factory.WorkOutScheduleFactory;
 import za.ac.cput.service.IService;
 
 import static org.junit.jupiter.api.Assertions.*;
-@TestMethodOrder(MethodOrderer.MethodName.class)
 
+@TestMethodOrder(MethodOrderer.MethodName.class)
+@SpringBootTest
 public class WorkOutScheduleServiceImplTest {
 
-    public static WorkOutScheduleServiceImplTest workOutScheduleServiceImplTest = (WorkOutScheduleServiceImplTest) WorkOutScheduleImpl.getInstance();
+    @Autowired
+    public static WorkOutScheduleServiceImpl workOutScheduleServiceImpl;
     public static WorkOutSchedule workOutSchedule = WorkOutScheduleFactory.createWorkOutSchedule(
             475647,8676, 69423, 1091, "24 October 2021", "09H30"
     );
@@ -21,7 +25,7 @@ public class WorkOutScheduleServiceImplTest {
     void a_createWorkOutScheduleTest()
     {
 
-        WorkOutSchedule newWorkOutScheduleRepo = (WorkOutSchedule) IService.create(workOutSchedule);
+        WorkOutSchedule newWorkOutScheduleRepo = workOutScheduleServiceImpl.create(workOutSchedule);
 
 
         assertEquals(newWorkOutScheduleRepo.getWorkoutId(), workOutSchedule.getWorkoutId());
@@ -45,7 +49,7 @@ public class WorkOutScheduleServiceImplTest {
 @Test
 @Disabled
 void b_read() {
-    WorkOutSchedule read = workOutSchedule.read(workOutSchedule.getWorkoutId());
+    WorkOutSchedule read = workOutScheduleServiceImpl.read(workOutSchedule.getWorkoutId());
     assertNotNull(read);
     System.out.println("\nRead:\n" + read.toString());
 }
@@ -62,14 +66,14 @@ void b_read() {
                 .build();
 
 
-        updated = WorkOutScheduleImpl.update(updated);
+        updated = workOutScheduleServiceImpl.update(updated);
         System.out.println("Updated: " + updated);
     }
 
     @Test
     void d_getAll() {
         System.out.println("\nDisplay all\n---\n");
-        System.out.println(WorkOutScheduleService.getAll());
+        System.out.println(workOutScheduleServiceImpl.getAll());
         System.out.println("------");
     }
 
@@ -77,7 +81,7 @@ void b_read() {
     void d_deleteExistingWorkOutScheduleTest()
     {
 
-        boolean success = IService.delete(workOutSchedule.getWorkoutId());
+        boolean success = workOutScheduleServiceImpl.delete(workOutSchedule.getWorkoutId());
 
 
         assertTrue(success);

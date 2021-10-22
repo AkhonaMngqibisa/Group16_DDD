@@ -10,8 +10,6 @@ import za.ac.cput.entity.WorkOutSchedule;
 import za.ac.cput.service.IService;
 import java.util.Set;
 
-public interface WorkOutService extends IService <WorkOut, String>{
-    boolean delete(Integer WorkOutId);
-
-    public Set<WorkOutSchedule> getAll ();
+public interface WorkOutService extends IService <WorkOut, Integer>{
+    public Set<WorkOut> getAll ();
 }

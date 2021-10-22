@@ -44,25 +44,25 @@ public class WorkOutController {
     }
     @GetMapping("/read/{workOutId}")
     public WorkOut read(@PathVariable int workOut) {
-        return IWorkOutRepository.read(workOut);
+        return workOutService.read(workOut);
     }
 
     @PostMapping("/update")
     public WorkOut update(@RequestBody WorkOut workOut)
     {
-        return IWorkOutRepository.update(workOut);
+        return workOutService.update(workOut);
     }
 
     @DeleteMapping("/delete/{id}")
     public boolean delete(@PathVariable int id)
     {
-        return IWorkOutRepository.delete(id);
+        return workOutService.delete(id);
     }
 
 
     @GetMapping("/getall")
     public Set<WorkOut> getAll(){
-        return IWorkOutRepository.getAll();}
+        return workOutService.getAll();}
 
     @RequestMapping("/new")
     public String showNewWorkOut(Model model) {

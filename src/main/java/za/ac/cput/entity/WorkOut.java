@@ -7,10 +7,9 @@ package za.ac.cput.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name="WorkOut")
-
 public class WorkOut 
 {
 
@@ -18,8 +17,6 @@ public class WorkOut
     private int workoutId;
     private String workoutName;
     private String workoutDescription;
-
-    public WorkOut() {}
 
     private WorkOut(Builder builder) {
         this.workoutId = builder.workoutId;

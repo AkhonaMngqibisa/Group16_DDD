@@ -16,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
-
 class WorkOutScheduleControllerTest {
     private final String baseURL = "http://localhost:8080/WorkOutSchedule";
     private static WorkOutSchedule workOutSchedule = WorkOutScheduleFactory.createWorkOutSchedule(
@@ -49,14 +48,14 @@ class WorkOutScheduleControllerTest {
 
     @Test
     void b_read() {
-        String url = baseURL + "/read/" + WorkOutSchedule.getScheduleId();
+        String url = baseURL + "/read/" + workOutSchedule.getScheduleId();
         ResponseEntity<WorkOutSchedule> response =
                 restTemplate.getForEntity(
                         url,
                         WorkOutSchedule.class
                 );
         assertNotNull(response.getBody());
-        assertEquals(WorkOutSchedule.getScheduleId(), response.getBody().getWorkoutId());
+        assertEquals(workOutSchedule.getScheduleId(), response.getBody().getWorkoutId());
         System.out.println(response.getBody());
     }
     @Test
@@ -85,7 +84,7 @@ class WorkOutScheduleControllerTest {
     @Test
     void e_delete()
     {
-        String urlDelete = baseURL + "/delete/" + WorkOutSchedule.getScheduleId();
+        String urlDelete = baseURL + "/delete/" + workOutSchedule.getScheduleId();
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity =  new HttpEntity<>(null, headers);
         ResponseEntity<Boolean> isDeleted =
@@ -97,7 +96,7 @@ class WorkOutScheduleControllerTest {
                 );
         assertNotNull(isDeleted.getBody());
         assertTrue(isDeleted.getBody());
-        String urlRead = baseURL + "/read/" + WorkOutSchedule.getScheduleId();
+        String urlRead = baseURL + "/read/" + workOutSchedule.getScheduleId();
         ResponseEntity<WorkOutSchedule> response =
                 restTemplate.getForEntity(
                         urlRead,
