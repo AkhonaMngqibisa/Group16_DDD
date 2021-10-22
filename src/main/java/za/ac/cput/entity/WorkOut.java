@@ -7,6 +7,9 @@ package za.ac.cput.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -24,20 +27,10 @@ public class WorkOut
         this.workoutDescription = builder.workoutDescription;
     }
 
-    public WorkOut() {
-
-    }
-
-    // public static short getWorkOutId() {
-    //  }
-
     public static class Builder {
         private int workoutId;
         private String workoutName;
         private String workoutDescription;
-
-        public Builder() {
-        }
 
         public Builder setWorkoutId(int workoutId) {
             this.workoutId = workoutId;
