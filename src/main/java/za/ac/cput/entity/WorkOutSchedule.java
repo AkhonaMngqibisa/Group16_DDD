@@ -7,11 +7,11 @@ package za.ac.cput.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="WorkOutSchedule")
-
 
 public class WorkOutSchedule {
     @Id
@@ -22,6 +22,7 @@ public class WorkOutSchedule {
     private String workoutDate;
     private String workoutTime;
 
+    public WorkOutSchedule() {}
 
     public WorkOutSchedule(WorkOutSchedule.Builder builder) {
         this.scheduleId = builder.scheduleId;
