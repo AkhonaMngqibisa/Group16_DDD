@@ -5,16 +5,8 @@ package za.ac.cput.entity;
 
  */
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="WorkOutSchedule")
-
-
 public class WorkOutSchedule {
-    @Id
+
     private int scheduleId;
     private int trainerId;
     private int memberId;
@@ -23,17 +15,13 @@ public class WorkOutSchedule {
     private String workoutTime;
 
 
-    public WorkOutSchedule(WorkOutSchedule.Builder builder) {
+    private WorkOutSchedule(WorkOutSchedule.Builder builder) {
         this.scheduleId = builder.scheduleId;
         this.trainerId = builder.trainerId;
         this.memberId = builder.memberId;
         this.workoutId = builder.workoutId;
         this.workoutDate = builder.workoutDate;
         this.workoutTime = builder.workoutTime;
-    }
-
-    public WorkOutSchedule() {
-
     }
 
     public static class Builder {
@@ -43,9 +31,6 @@ public class WorkOutSchedule {
         private int workoutId;
         private String workoutDate;
         private String workoutTime;
-
-        public Builder() {
-        }
 
         public WorkOutSchedule.Builder setScheduleId(int scheduleId) {
             this.scheduleId = scheduleId;
@@ -82,16 +67,14 @@ public class WorkOutSchedule {
         }
 
 
-
     }
 
     public int getWorkoutId() {
         return this.workoutId;
     }
 
-    public static int getScheduleId() {
-        int scheduleId1 = getScheduleId();
-        return scheduleId1;
+    public int getScheduleId() {
+        return this.scheduleId;
     }
 
     public int getTrainerId() {
