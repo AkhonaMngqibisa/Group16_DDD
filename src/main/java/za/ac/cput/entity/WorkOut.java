@@ -1,3 +1,4 @@
+
 package za.ac.cput.entity;
 /* Hlumelo Mpotulo
    215226348
@@ -5,21 +6,19 @@ package za.ac.cput.entity;
 
  */
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 @Entity
+@Table(name="WorkOut")
+
 public class WorkOut
 {
 
     @Id
+
     private int workoutId;
     private String workoutName;
     private String workoutDescription;
+
+    public WorkOut() {}
 
     private WorkOut(Builder builder) {
         this.workoutId = builder.workoutId;
