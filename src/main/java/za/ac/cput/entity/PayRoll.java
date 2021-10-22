@@ -17,14 +17,14 @@ public class PayRoll {
     private String trainerID;
     private String hours;
 
-private PayRoll() {}
+    private PayRoll() {}
 
-private PayRoll (Builder builder)
-{
-    this.payrollID=builder.payrollID;
-    this.trainerID=builder.trainerID;
-    this.hours=builder.hours;
-}
+    private PayRoll (Builder builder)
+    {
+        this.payrollID=builder.payrollID;
+        this.trainerID=builder.trainerID;
+        this.hours=builder.hours;
+    }
 
     public int getPayrollID() { return payrollID; }
 
@@ -67,7 +67,7 @@ private PayRoll (Builder builder)
 
         //Return instance of PayRoll.
         public PayRoll build() {
-           return new PayRoll(this);
+            return new PayRoll(this);
         }
 
         //Copy method

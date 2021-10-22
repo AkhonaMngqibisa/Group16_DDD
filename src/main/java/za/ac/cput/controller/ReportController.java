@@ -6,14 +6,16 @@ import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Report;
 import za.ac.cput.factory.ReportFactory;
 import za.ac.cput.service.impl.IReportService;
+import za.ac.cput.service.impl.ReportServiceImpl;
 
 import java.util.Set;
 
 @Controller
 @RequestMapping("/report")
 public class ReportController {
+
     @Autowired
-    private IReportService iReportService;
+    private ReportServiceImpl iReportService;
 
     @PostMapping("/create")
     public Report create(@RequestBody Report report) {
