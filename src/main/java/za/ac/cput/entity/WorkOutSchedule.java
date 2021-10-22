@@ -8,7 +8,11 @@ package za.ac.cput.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+
+
 @Entity
+@Table(name="WorkOutSchedule")
+
 public class WorkOutSchedule {
     @Id
     private int scheduleId;
@@ -20,13 +24,17 @@ public class WorkOutSchedule {
 
     public WorkOutSchedule() {}
 
-    private WorkOutSchedule(WorkOutSchedule.Builder builder) {
+    public WorkOutSchedule(WorkOutSchedule.Builder builder) {
         this.scheduleId = builder.scheduleId;
         this.trainerId = builder.trainerId;
         this.memberId = builder.memberId;
         this.workoutId = builder.workoutId;
         this.workoutDate = builder.workoutDate;
         this.workoutTime = builder.workoutTime;
+    }
+
+    public WorkOutSchedule() {
+
     }
 
     public static class Builder {
@@ -36,6 +44,9 @@ public class WorkOutSchedule {
         private int workoutId;
         private String workoutDate;
         private String workoutTime;
+
+        public Builder() {
+        }
 
         public WorkOutSchedule.Builder setScheduleId(int scheduleId) {
             this.scheduleId = scheduleId;
@@ -72,14 +83,16 @@ public class WorkOutSchedule {
         }
 
 
+
     }
 
     public int getWorkoutId() {
         return this.workoutId;
     }
 
-    public int getScheduleId() {
-        return this.scheduleId;
+    public static int getScheduleId() {
+        int scheduleId1 = getScheduleId();
+        return scheduleId1;
     }
 
     public int getTrainerId() {
