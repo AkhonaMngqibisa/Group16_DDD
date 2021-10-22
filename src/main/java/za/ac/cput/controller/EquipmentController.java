@@ -1,6 +1,7 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Equipment;
 import za.ac.cput.factory.EquipmentFactory;
@@ -13,7 +14,7 @@ Author: Lilitha Moni (219068429)
 Date:16 August 2021
 */
 
-@RestController
+@Controller
 @RequestMapping("/equipment")
 public class EquipmentController {
 

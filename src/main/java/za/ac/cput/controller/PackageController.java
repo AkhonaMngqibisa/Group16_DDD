@@ -1,6 +1,7 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Package;
 import za.ac.cput.factory.PackageFactory;
@@ -8,15 +9,14 @@ import za.ac.cput.service.impl.IPackageService;
 
 import java.util.Set;
 
-@RestController
+@Controller
 @RequestMapping("/package")
 public class PackageController {
     @Autowired
     private IPackageService iPackageService;
-    @PostMapping("/create")
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
     public Package create(@RequestBody Package aPackag) {
-        Package aPackage = PackageFactory.createPackage(aPackag.getPackageID(),
-                aPackag.getMembershipID(),
+        Package aPackage = PackageFactory.createPackage(
                 aPackag.getHoursPerWeek(),
                 aPackag.getPrice(), aPackag.getPackageName());
         return iPackageService.create(aPackage);

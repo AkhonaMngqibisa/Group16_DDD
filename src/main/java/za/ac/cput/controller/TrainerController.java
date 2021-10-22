@@ -6,13 +6,14 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Trainer;
 import za.ac.cput.factory.TrainerFactory;
 import za.ac.cput.service.impl.TrainerService;
 import java.util.Set;
 
-@RestController
+@Controller
 @RequestMapping("/trainer")
 public class TrainerController {
     @Autowired

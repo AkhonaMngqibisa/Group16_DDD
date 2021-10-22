@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
+
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -16,6 +17,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                 .and()
                 .authorizeRequests()
+                .antMatchers(HttpMethod.GET, "/login").authenticated()
                 .antMatchers(HttpMethod.GET, "/**/getall").hasRole("ADMIN")
                 .antMatchers(HttpMethod.POST, "/**/create", "/**/update").hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE, "/**/delete/*").hasRole("ADMIN")

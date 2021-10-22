@@ -1,11 +1,16 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Member;
 import za.ac.cput.factory.MemberFactory;
 import za.ac.cput.service.impl.MemberService;
 
+import javax.validation.Valid;
 import java.util.Set;
 
 /* MemberController.java
@@ -14,7 +19,7 @@ Author: Akhona Mngqibisa (217302394)
 Date:15 August 2021
 */
 
-@RestController
+@Controller
 @RequestMapping("/member")
 public class MemberController {
 
@@ -22,18 +27,20 @@ public class MemberController {
     private MemberService memberService;
 
     @RequestMapping(value = "/create",method = RequestMethod.POST)
-    public Member create(@RequestBody Member member)
+    public String create(@ModelAttribute("member")Member member)
     {
         Member newMember = MemberFactory.createMember(member.getFirstName(), member.getLastName(), member.getAddress(),member.getPhoneNo(), member.getAge(), member.getStatus(), member.getEmailAddress(), member.getPassword());
-        if((newMember.getFirstName()== null)|| (newMember.getFirstName().trim().isEmpty())
+        if((newMember.getFirstName()==null)|| (newMember.getFirstName().trim().isEmpty())
                 || (newMember.getLastName()==null) || (newMember.getLastName().trim().isEmpty())
                 || (newMember.getEmailAddress()==null) || newMember.getEmailAddress().trim().isEmpty())
             //These are compulsory
 
             throw new NullPointerException();
         else
+        memberService.create(newMember);
+        System.out.println("SHOW THE MEMBER"+member.toString());
+        return "redirect:/member/getall";
 
-        return memberService.create(newMember);
     }
     @GetMapping("/read/{id}")
     public Member read(@PathVariable int id)
@@ -55,8 +62,20 @@ public class MemberController {
 
 
     @GetMapping("/getall")
-    public Set<Member> getAll()
+    public String getAll(Model model)
     {
-        return memberService.getAll();
+        Set<Member> listMembers = memberService.getAll();
+        model.addAttribute("listMembers", listMembers);
+        return "memberlist";
     }
+
+    @RequestMapping("/new")
+    public String showNewMemberPage(Model model) {
+        Member member = new Member();
+        model.addAttribute("member", member);
+
+        return "newMemberForm";
+    }
+
+
 }

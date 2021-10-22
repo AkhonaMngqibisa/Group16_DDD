@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.MedicalStaff;
 import za.ac.cput.factory.MedicalStaffFactory;
@@ -19,7 +20,7 @@ import za.ac.cput.service.impl.MedicalStaffService;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Set;
 
-@RestController
+@Controller
 @RequestMapping("/medicalstaff")
 public class MedicalStaffController {
     
@@ -27,6 +28,7 @@ public class MedicalStaffController {
     private MedicalStaffService medicalStaffService;
 
     @PostMapping(value="/create", consumes= MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
     public MedicalStaff create_application_json(@RequestBody MedicalStaff medicalStaff) {
         MedicalStaff newMedicalStaff =
                 MedicalStaffFactory.createMedicalStaff(
@@ -39,6 +41,7 @@ public class MedicalStaffController {
     }
 
     @PostMapping(value="/create", consumes=MediaType.MULTIPART_FORM_DATA_VALUE)
+    @ResponseBody
     public MedicalStaff create_multipart_form_data(@ModelAttribute("medicalStaff") MedicalStaff medicalStaff) {
         MedicalStaff newMedicalStaff =
                 MedicalStaffFactory.createMedicalStaff(
@@ -51,21 +54,25 @@ public class MedicalStaffController {
     }
 
     @GetMapping("/read/{id}")
+    @ResponseBody
     public MedicalStaff read(@PathVariable int id) {
         return medicalStaffService.read(id);
     }
 
     @PostMapping("/update")
+    @ResponseBody
     public MedicalStaff update(@RequestBody MedicalStaff medicalStaff) {
         return medicalStaffService.update(medicalStaff);
     }
 
     @DeleteMapping("/delete/{id}")
+    @ResponseBody
     public boolean delete(@PathVariable int id) {
         return medicalStaffService.delete(id);
     }
 
     @GetMapping("/getall")
+    @ResponseBody
     public Set<MedicalStaff> getAll() {
         return medicalStaffService.getAll();
     }

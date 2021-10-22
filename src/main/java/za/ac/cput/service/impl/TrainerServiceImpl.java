@@ -1,55 +1,59 @@
+package za.ac.cput.service.impl;
 /* TrainerServiceImpl.java
  * Service implementation for Trainer.
  * Author: Bokang Molaoa [ 218131097 ]
  * Date: 01 August 2021
  */
-package za.ac.cput.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.entity.Trainer;
-import za.ac.cput.repository.impl.TrainerRepository;
+import za.ac.cput.repository.impl.ITrainerRepository;
+
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class TrainerServiceImpl implements TrainerService {
-    private static TrainerService trainerService;
-    private final TrainerRepository trainerRepository;
+    @Autowired
+    private ITrainerRepository trainerRepository;
 
     public TrainerServiceImpl() {
-        this.trainerRepository = TrainerRepository.getRepository();
-    }
-
-    public TrainerServiceImpl(TrainerRepository trainerRepository) {
-        this.trainerRepository = trainerRepository;
-    }
-
-    public static TrainerService getInstance() {
-        if(trainerService == null)
-            trainerService = new TrainerServiceImpl();
-        return trainerService;
     }
 
     @Override
     public Trainer create(Trainer trainer) {
-        return trainerRepository.create(trainer);
+
+        return this.trainerRepository.save(trainer);
     }
 
     @Override
-    public Trainer read(Integer integer) {
-        return trainerRepository.read(integer);
+    public Trainer read(Integer trainerId) {
+        return this.trainerRepository.findById(trainerId).orElse(null);
     }
 
     @Override
     public Trainer update(Trainer trainer) {
-        return trainerRepository.update(trainer);
+        if(this.trainerRepository.existsById(trainer.getTrainerID()))
+            return this.trainerRepository.save(trainer);
+        return null;
     }
 
     @Override
-    public boolean delete(Integer integer) {
-        return trainerRepository.delete(integer);
+    public boolean delete(Integer supId) {
+        this.trainerRepository.deleteById(supId);
+        if(this.trainerRepository.existsById(supId))
+            return false;
+        else
+
+            return true;
     }
 
-    public Set<Trainer> getAll() {
-        return trainerRepository.getAll();
+    @Override
+    public Set<Trainer> getAll()
+    {
+        return this.trainerRepository.findAll().stream().collect(Collectors.toSet());
     }
+
+
 }

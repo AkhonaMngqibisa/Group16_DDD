@@ -6,6 +6,7 @@ Author: Bongisa Mpahleni (216205999)
 Date: 09 June 2021
 */
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -17,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class AdminServicemplTest {
 
-    private static AdminServicempl adminServicempl = (AdminServicempl) AdminServicempl.getAdminService();
+    private static AdminServicempl adminService;
     private static Admin admin = AdminFactory.creatAdmin("BONGISA", "MPAHLENI",
             "0781837656", "216205999@MYCPUT.AC.ZA");
 
@@ -26,36 +27,40 @@ class AdminServicemplTest {
     }
 
     @Test
-    void create() {
+    void a_create() {
 
-        Admin created = adminServicempl.create(admin);
+        Admin created = adminService.create(admin);
         assertEquals(admin.getID(), created.getID());
         System.out.println("\nCreated: " + created);
     }
 
     @Test
-    void read() {
-        Admin read = adminServicempl.read(admin.getID());
+    @Disabled
+    void b_bread() {
+        Admin read = adminService.read(admin.getID());
         System.out.println("\nRead:\n" + read);
     }
 
     @Test
-    void update() {
+    @Disabled
+    void c_update() {
 
         Admin admin1 = new Admin.Builder().copy(admin).setPhoneNo("0781837656").build();
-        admin1 = adminServicempl.update(admin1);
+        admin1 = adminService.update(admin1);
         System.out.println("\nUpdated: " + admin1);
     }
 
     @Test
-    void delete() {
+    @Disabled
+    void d_delete() {
 
-        boolean deleteSuccessful = adminServicempl.delete(admin.getID());
+        boolean deleteSuccessful = adminService.delete(admin.getID());
         assertTrue(deleteSuccessful);
     }
 
     @Test
-    void getAll() { System.out.println("Display All: " + adminServicempl.getAll()); }
+    @Disabled
+    void getAll() { System.out.println("Display All: " + adminService.getAll()); }
 
 
 }
