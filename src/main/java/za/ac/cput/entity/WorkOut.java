@@ -6,14 +6,14 @@ package za.ac.cput.entity;
 
  */
 
-@Entity
-@Table(name="WorkOut")
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-public class WorkOut 
+@Entity
+public class WorkOut
 {
 
     @Id
-
     private int workoutId;
     private String workoutName;
     private String workoutDescription;
