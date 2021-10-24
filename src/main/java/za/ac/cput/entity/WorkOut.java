@@ -6,10 +6,19 @@ package za.ac.cput.entity;
 
  */
 
-public class WorkOut {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class WorkOut
+{
+
+    @Id
     private int workoutId;
     private String workoutName;
     private String workoutDescription;
+
+    public WorkOut() {}
 
     private WorkOut(Builder builder) {
         this.workoutId = builder.workoutId;

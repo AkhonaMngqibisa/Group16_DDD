@@ -7,10 +7,12 @@ Date: August  2021
 */
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import za.ac.cput.entity.Payment;
 
 import java.util.Set;
 
-public interface IPaymentRespository extends JpaRepository<Payment, Integer> {
-   public Set<Payment> getAll();
+@Repository
+public interface IPaymentRepository extends JpaRepository<Payment, Integer> {
+//   public Set<Payment> getAll();
 }
