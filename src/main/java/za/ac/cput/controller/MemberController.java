@@ -1,12 +1,15 @@
 package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import za.ac.cput.entity.MedicalStaff;
 import za.ac.cput.entity.Member;
+import za.ac.cput.factory.MedicalStaffFactory;
 import za.ac.cput.factory.MemberFactory;
 import za.ac.cput.service.impl.MemberService;
 
@@ -26,6 +29,7 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
+    /*
     @RequestMapping(value = "/create",method = RequestMethod.POST)
     public String create(@ModelAttribute("member")Member member)
     {
@@ -42,26 +46,67 @@ public class MemberController {
         return "redirect:/member/getall";
 
     }
+    */
+
+    @PostMapping(value="/create", consumes= MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Member create_application_json(@RequestBody Member member) {
+        Member newMember =
+                MemberFactory.createMember(
+                        member.getFirstName(),
+                        member.getLastName(),
+                        member.getAddress(),
+                        member.getPhoneNo(),
+                        member.getAge(),
+                        member.getStatus(),
+                        member.getEmailAddress(),
+                        member.getPassword()
+                );
+        return memberService.create(newMember);
+    }
+
+    @PostMapping(value="/create", consumes=MediaType.MULTIPART_FORM_DATA_VALUE)
+    @ResponseBody
+    public Member create_multipart_form_data(@ModelAttribute("member") Member member) {
+        Member newMember =
+                MemberFactory.createMember(
+                        member.getFirstName(),
+                        member.getLastName(),
+                        member.getAddress(),
+                        member.getPhoneNo(),
+                        member.getAge(),
+                        member.getStatus(),
+                        member.getEmailAddress(),
+                        member.getPassword()
+                );
+        return memberService.create(newMember);
+    }
+
     @GetMapping("/read/{id}")
+    @ResponseBody
     public Member read(@PathVariable int id)
     {
         return memberService.read(id);
     }
 
     @PostMapping("/update")
+    @ResponseBody
     public Member update(@RequestBody Member member)
     {
         return memberService.update(member);
     }
 
     @DeleteMapping("/delete/{id}")
+    @ResponseBody
     public boolean delete(@PathVariable int id)
     {
         return memberService.delete(id);
     }
 
 
+
     @GetMapping("/getall")
+    @ResponseBody
     public String getAll(Model model)
     {
         Set<Member> listMembers = memberService.getAll();
