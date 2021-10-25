@@ -22,8 +22,8 @@ public class AdminController {
         @RequestMapping(value = "/create",method = RequestMethod.POST)
         public String create(@ModelAttribute("admin") Admin admin)
         {
-            Admin newAdmin = AdminFactory.creatAdmin(admin.getFisrtName(), admin.getLastName(), admin.getPhoneNo(), admin.getEmailAddress());
-            if((newAdmin.getFisrtName()== null)|| (newAdmin.getFisrtName().trim().isEmpty())
+            Admin newAdmin = AdminFactory.creatAdmin(admin.getFirstName(), admin.getLastName(), admin.getPhoneNo(), admin.getEmailAddress());
+            if((newAdmin.getFirstName()== null)|| (newAdmin.getFirstName().trim().isEmpty())
                     || (newAdmin.getLastName()==null) || (newAdmin.getLastName().trim().isEmpty())
                     || (newAdmin.getEmailAddress()==null) || newAdmin.getEmailAddress().trim().isEmpty())
 

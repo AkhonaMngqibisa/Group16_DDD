@@ -31,7 +31,7 @@ public class MembershipServiceImpl implements MembershipService{
 
     @Override
     public Membership update(Membership membership) {
-        if (membershipRepository.existsById(membership.getID()))
+        if (membershipRepository.existsById(membership.getId()))
             return membershipRepository.save(membership);
         return null;
     }
