@@ -2,8 +2,11 @@ package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.Equipment;
+import za.ac.cput.entity.Member;
+import za.ac.cput.entity.Membership;
 import za.ac.cput.factory.EquipmentFactory;
 import za.ac.cput.service.impl.EquipmentService;
 import java.util.Set;
@@ -22,6 +25,7 @@ public class EquipmentController {
     private EquipmentService equipmentService;
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @ResponseBody
 
     public Equipment create(@RequestBody Equipment equipment)
     {
@@ -30,12 +34,14 @@ public class EquipmentController {
     }
 
     @GetMapping("/read/{id}")
+    @ResponseBody
     public Equipment read(@PathVariable int id)
     {
         return equipmentService.read(id);
     }
 
     @PostMapping("/update")
+    @ResponseBody
     public Equipment update(@RequestBody Equipment equipment)
     {
 
@@ -48,10 +54,12 @@ public class EquipmentController {
         return equipmentService.delete(id);
     }
 
+
     @GetMapping("/getall")
     public Set<Equipment> getAll()
     {
         return equipmentService.getAll();
     }
+
 
 }
