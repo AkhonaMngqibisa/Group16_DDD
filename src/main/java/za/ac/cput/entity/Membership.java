@@ -92,7 +92,7 @@ public class Membership {
 
     public Membership() {}
 
-    public int getID() {
+    public int getId() {
         return id;
     }
 
