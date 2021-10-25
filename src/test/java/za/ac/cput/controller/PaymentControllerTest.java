@@ -1,5 +1,9 @@
 package za.ac.cput.controller;
 
+/* PaymentControllerTest.java
+Author: Bongisa Mpahleni (216205999)
+Date: 09 June 2021
+*/
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
