@@ -14,16 +14,16 @@ Date: 09 June 2021
 @Table(name="Admin")
 public class Admin {
 
-@Id
-private String fisrtName;
-private String lastName;
-private String phoneNo;
-private String emailAddress;
-private int ID;
+    @Id
+    private int ID;
+    private String firstName;
+    private String lastName;
+    private String phoneNo;
+    private String emailAddress;
 
     public Admin(Builder builder) {
         this.ID = builder.ID;
-        this.fisrtName = builder.firstName;
+        this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.phoneNo = builder.phoneNo;
         this.emailAddress = builder.emailAddress;
@@ -33,8 +33,8 @@ private int ID;
 
     }
 
-    public String getFisrtName() {
-        return fisrtName;
+    public String getFirstName() {
+        return firstName;
     }
 
     public String getLastName() {
@@ -56,7 +56,7 @@ private int ID;
     @Override
     public String toString() {
         return "Admin{" +
-                "fisrtName='" + fisrtName + '\'' +
+                "fisrtName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phoneNo='" + phoneNo + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +
@@ -113,7 +113,7 @@ private int ID;
         public Builder copy(Admin admin)
         {
             this.ID = admin.ID;
-            this.firstName= admin.fisrtName;
+            this.firstName= admin.firstName;
             this.lastName=admin.lastName;
             this.phoneNo=admin.phoneNo;
             this.emailAddress=admin.emailAddress;

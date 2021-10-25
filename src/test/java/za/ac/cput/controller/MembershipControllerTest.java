@@ -61,20 +61,20 @@ class MembershipControllerTest {
         assertEquals(HttpStatus.OK, postResponse.getStatusCode());
         membership = postResponse.getBody();
         System.out.println("Saved data\n----------\n" + membership);
-        assertEquals(membership.getID(), postResponse.getBody().getID());
+        assertEquals(membership.getId(), postResponse.getBody().getId());
     }
 
     @Test
     void b_read()
     {
-        String url = baseURL + "/read/" + membership.getID();
+        String url = baseURL + "/read/" + membership.getId();
         ResponseEntity<Membership> response =
                 restTemplate.getForEntity(
                         url,
                         Membership.class
                 );
         assertNotNull(response.getBody());
-        assertEquals(membership.getID(), response.getBody().getID());
+        assertEquals(membership.getId(), response.getBody().getId());
         System.out.println(response.getBody());
     }
 
@@ -117,7 +117,7 @@ class MembershipControllerTest {
     @Test
     void e_delete()
     {
-        String urlDelete = baseURL + "/delete/" + membership.getID();
+        String urlDelete = baseURL + "/delete/" + membership.getId();
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity =  new HttpEntity<>(null, headers);
         ResponseEntity<Boolean> isDeleted =
@@ -129,7 +129,7 @@ class MembershipControllerTest {
                 );
         assertNotNull(isDeleted.getBody());
         assertTrue(isDeleted.getBody());
-        String urlRead = baseURL + "/read/" + membership.getID();
+        String urlRead = baseURL + "/read/" + membership.getId();
         ResponseEntity<MedicalStaff> response =
                 restTemplate.getForEntity(
                         urlRead,

@@ -8,16 +8,12 @@ package za.ac.cput.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.security.authentication.AnonymousAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.MedicalStaff;
 import za.ac.cput.factory.MedicalStaffFactory;
 import za.ac.cput.service.impl.MedicalStaffService;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Set;
 
 @Controller

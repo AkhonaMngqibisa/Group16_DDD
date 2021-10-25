@@ -9,9 +9,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import za.ac.cput.entity.MedicalStaff;
 import za.ac.cput.entity.Member;
-import za.ac.cput.factory.MedicalStaffFactory;
+import za.ac.cput.entity.Membership;
 import za.ac.cput.factory.MemberFactory;
 import za.ac.cput.service.impl.MemberService;
+import za.ac.cput.service.impl.MembershipService;
 
 import javax.validation.Valid;
 import java.util.Set;
@@ -31,6 +32,7 @@ public class MemberController {
 
     /*
     @RequestMapping(value = "/create",method = RequestMethod.POST)
+    @ResponseBody
     public String create(@ModelAttribute("member")Member member)
     {
         Member newMember = MemberFactory.createMember(member.getFirstName(), member.getLastName(), member.getAddress(),member.getPhoneNo(), member.getAge(), member.getStatus(), member.getEmailAddress(), member.getPassword());
@@ -103,8 +105,6 @@ public class MemberController {
         return memberService.delete(id);
     }
 
-
-
     @GetMapping("/getall")
     @ResponseBody
     public String getAll(Model model)
@@ -114,6 +114,20 @@ public class MemberController {
         return "memberlist";
     }
 
+ /*
+    public Set<Member> getAll( @RequestParam(required = false, defaultValue = "false", value = "filter") String filter
+    )
+    {
+        Set<Member> listMembers = memberService.getAll();
+        if (filter.equals("true")) {
+            Set<Membership> listMemberships = membershipService.getAll();
+            for(Membership membership : listMemberships)
+                listMembers.removeIf(p -> p.getMemberID() == membership.getId());
+        }
+
+        return listMembers;
+    }
+*/
     @RequestMapping("/new")
     public String showNewMemberPage(Model model) {
         Member member = new Member();

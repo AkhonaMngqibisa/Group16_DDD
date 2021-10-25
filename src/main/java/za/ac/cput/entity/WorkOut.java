@@ -41,8 +41,8 @@ public class WorkOut
             return this;
         }
 
-        public Builder setWorkoutDescription(String workoutName) {
-            this.workoutName = workoutName;
+        public Builder setWorkoutDescription(String workoutDescription) {
+            this.workoutName = workoutDescription;
             return this;
         }
         public WorkOut build() {
