@@ -30,6 +30,7 @@ public class MembershipController {
     private MemberService memberService;
 
     @PostMapping("/create")
+    @ResponseBody
     public ResponseEntity<Membership> create(@RequestBody Membership membership)
     {
         Member member = memberService.read(membership.getMember().getMemberID());
@@ -48,24 +49,30 @@ public class MembershipController {
     }
 
     @GetMapping("/read/{id}")
+    @ResponseBody
     public Membership read(@PathVariable int id)
     {
         return membershipService.read(id);
     }
 
     @PostMapping("/update")
-    public Membership update(@RequestBody Membership membership)
+    @ResponseBody
+    public Membership update(
+            @RequestBody Membership membership
+    )
     {
         return membershipService.update(membership);
     }
 
     @DeleteMapping("/delete/{id}")
+    @ResponseBody
     public boolean delete(@PathVariable int id)
     {
         return membershipService.delete(id);
     }
 
     @GetMapping("/getall")
+    @ResponseBody
     public Set<Membership> getAll()
     {
         return membershipService.getAll();

@@ -6,7 +6,6 @@
 
 package za.ac.cput.service.impl;
 
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +13,6 @@ import za.ac.cput.entity.Member;
 import za.ac.cput.entity.Membership;
 import za.ac.cput.factory.MemberFactory;
 import za.ac.cput.factory.MembershipFactory;
-import za.ac.cput.util.GenericHelper;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -65,13 +63,13 @@ class MembershipServiceImplTest {
     @Test
     void a_create() {
         Membership created = membershipServiceImpl.create(membership);
-        assertEquals(created.getID(), membership.getID());
+        assertEquals(created.getId(), membership.getId());
         System.out.println("Created: " + created);
     }
 
     @Test
     void b_read() {
-        Membership read = membershipServiceImpl.read(membership.getID());
+        Membership read = membershipServiceImpl.read(membership.getId());
         assertNotNull(read);
         System.out.println("Read: " + read);
     }
@@ -90,7 +88,7 @@ class MembershipServiceImplTest {
 
     @Test
     void e_delete() {
-        boolean deleted = membershipServiceImpl.delete(membership.getID());
+        boolean deleted = membershipServiceImpl.delete(membership.getId());
         assertTrue(deleted);
         System.out.println("Delete: " + deleted);
     }
