@@ -26,17 +26,24 @@ public class PaymentServicempl implements PaymentService{
 
     @Override
     public Payment read(Integer paymentId) {
-        return this.paymentRep.getById(paymentId);
+        return this.paymentRep.findById(paymentId).orElse(null);
     }
 
     @Override
     public Payment update(Payment payment) {
-        return this.paymentRep.save(payment);
+        if(this.paymentRep.existsById(payment.getPaymentID()))
+            return this.paymentRep.save(payment);
+        return null;
     }
 
     @Override
     public boolean delete(Integer paymentId) {
-        return this.delete(paymentId);
+        this.paymentRep.deleteById(paymentId);
+        if(this.paymentRep.existsById(paymentId))
+            return false;
+        else
+
+            return true;
     }
 
     @Override
